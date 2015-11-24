@@ -1,2 +1,14 @@
 /* some style */
 
+#main {
+  width: 500px;
+  margin: 0 auto;
+  padding: 2em 1em;
+  border: 1px solid black;
+}
+
+
+table tbody td {
+  padding: 2px;
+  border-top: 1px solid black;
+}

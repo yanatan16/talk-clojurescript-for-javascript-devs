@@ -8,6 +8,7 @@ A talk I'm giving at DenverScript on Jan 26 2015.
     - `lein new figwheel my-project`
     - `lein figwheel`
     - using the repl
+    - figwheel errors and automatic updating
 - What Clojurescript looks like
     - Check out some code visually
     - lispyness
@@ -16,6 +17,7 @@ A talk I'm giving at DenverScript on Jan 26 2015.
     - basic rendering of some stuff using document and alert
     - figwheel reload semantics
 - Reagent
+    - figwheel reload doesn't touch app state
 - core.async
 
 ## Setup
