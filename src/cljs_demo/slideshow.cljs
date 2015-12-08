@@ -42,9 +42,9 @@
 (defn on-key-down [e]
   (case (.-keyCode e)
     40 (do (swap-slide! inc)
-                    (.preventDefault e))
+           (.preventDefault e))
     38 (do (swap-slide! dec)
-                  (.preventDefault e))
+           (.preventDefault e))
     (println "no matching clause for key" (.-keyCode e))))
 
 (defn- start-slideshow! []
@@ -63,19 +63,19 @@
     [:div.com-rigsomelight-devcards-slideshow-btns
      [:a.com-rigsomelight-devcards-slideshow-btn
       {:href "#" :on-click #(do (.preventDefault %) (start-slideshow!))
-       :style {:display (if active "none" "inherit")}}
+       :style {:display (if active "none" "")}}
       "Start Slideshow"]
      [:a.com-rigsomelight-devcards-slideshow-btn
       {:href "#" :on-click #(do (.preventDefault %) (swap-slide! inc))
-       :style {:display (if active "inherit" "none")}}
+       :style {:display (if active "" "none")}}
      "Next"]
      [:a.com-rigsomelight-devcards-slideshow-btn
      {:href "#" :on-click #(do (.preventDefault %) (swap-slide! dec))
-      :style {:display (if active "inherit" "none")}}
+      :style {:display (if active "" "none")}}
      "Previous"]
      [:a.com-rigsomelight-devcards-slideshow-btn
      {:href "#" :on-click #(do (.preventDefault %) (stop-slideshow!))
-      :style {:display (if active "inherit" "none")}}
+      :style {:display (if active "" "none")}}
      "Stop"]]))
 
 (defn- insert-buttons []
