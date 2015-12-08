@@ -1,15 +1,12 @@
 (ns cljs-demo.async
   (:refer-clojure :exclude [update])
   (:require-macros [cljs.core.async.macros :refer [go]])
-  (:require [cljs.core.async :refer [chan >! <! pipe]]
+  (:require [devcards.core :as dc :refer-macros [defcard-rg]]
+            [cljs.core.async :refer [chan >! <! pipe]]
             [ajax.core :refer [GET]]
-            [reagent.core :as r]
             [clojure.string :as str]))
 
 (def medical-marijuana-url "https://data.colorado.gov/api/views/7wau-rnkf/rows.csv?accessType=DOWNLOAD")
-
-(defonce app-state (r/atom {}))
-
 ;;;;;;;;;;;;;;;;;;;;
 ;; Ajax functions ;;
 ;;;;;;;;;;;;;;;;;;;;
@@ -34,18 +31,18 @@
   (pipe (ajax-get url)
         (chan 1 (map parse-csv))))
 
-(defn get-mj-data []
-  (swap! app-state assoc :mj-data nil)
+(defn get-mj-data [state-atom]
+  (swap! state-atom assoc :mj-data nil)
   (let [c (ajax-get-json medical-marijuana-url)]
     (go (let [data (<! c)]
-          (swap! app-state assoc :mj-data data)))))
+          (swap! state-atom assoc :mj-data data)))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Reagent Components ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defn mj-data-component []
-  (if-let [{:keys [header body]} (get-in @app-state [:mj-data])]
+(defn mj-data-component [state-atom]
+  (if-let [{:keys [header body]} (get-in @state-atom [:mj-data])]
     [:table
      [:thead>tr (map (fn [el] ^{:key el} [:td el]) header)]
      [:tbody (map (fn [row]
@@ -54,16 +51,14 @@
                   body)]]
     [:p "No data has been retrieved"]))
 
-(defn mj-component []
+(defn mj-component [state-atom]
   [:div.medical-marijuana
-   [:button {:on-click get-mj-data} "Get Medical Marijuana Data"]
-   [mj-data-component]])
+   [:button {:on-click #(get-mj-data state-atom)} "Get Medical Marijuana Data"]
+   [mj-data-component state-atom]])
 
-;;;;;;;;;;;;;;;;;
-;; Boilerplate ;;
-;;;;;;;;;;;;;;;;;
 
-(defn init [el]
-  (r/render-component [mj-component] el))
+;; Example devcard
 
-(defn update [] (swap! app-state update-in [:__update-counter] inc))
+(defcard-rg mj-data-card
+  (fn [state-atom _]
+    [mj-component state-atom]))

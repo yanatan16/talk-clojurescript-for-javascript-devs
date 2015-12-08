@@ -1,14 +1,42 @@
 /* some style */
 
-#main {
-  width: 500px;
-  margin: 0 auto;
-  padding: 2em 1em;
-  border: 1px solid black;
+.hello-world {
+  color: red;
 }
 
 
 table tbody td {
   padding: 2px;
   border-top: 1px solid black;
+}
+
+
+/* slideshow stuff */
+.com-rigsomelight-devcards-slideshow-btns-container {
+  position: fixed;
+  top: 0;
+  left: 50%;
+}
+
+a.com-rigsomelight-devcards-slideshow-btn,
+a.com-rigsomelight-devcards-slideshow-btn:active,
+a.com-rigsomelight-devcards-slideshow-btn:visited,
+a.com-rigsomelight-devcards-slideshow-btn:hover {
+  padding: 2px;
+  text-decoration: none;
+  color: #428bca;
+
+  &, &:visited, &:active, &:hover {
+    text-decoration: none;
+    color: #428bca;
+  }
+}
+
+.com-rigsomelight-devcards-slideshow .com-rigsomelight-devcard {
+  opacity: 0.5;
+}
+
+.com-rigsomelight-devcards-slideshow
+  .com-rigsomelight-devcard.com-rigsomelight-devcard-slideshow-active {
+  opacity: 1.0;
 }

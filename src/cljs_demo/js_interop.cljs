@@ -1,4 +1,5 @@
-(ns cljs-demo.js-interop)
+(ns cljs-demo.js-interop
+  (:require [devcards.core :as dc :refer-macros [defcard]]))
 
 (defn- on-click [e]
   ;; We can call global functions
@@ -14,13 +15,11 @@
     ;; return btn
     btn))
 
-(defn- insert-button [sel]
-  ;; We can pass cljs string variables to js functions
-  (let [div (.querySelector js/document sel)]
-    ;; We can append the dom with js interop
-    (.appendChild div (create-button))))
+(defn- insert-button [div]
+  ;; We can append the dom with js interop
+  (.appendChild div (create-button)))
 
-(defn init
-  "Create the js-interop demo on a selector"
-  [sel]
-  (insert-button sel))
+
+(defcard js-interop-card
+  (dc/dom-node
+   (fn [_ node] (insert-button node))))
