@@ -14,8 +14,9 @@ table tbody td {
 /* slideshow stuff */
 .com-rigsomelight-devcards-slideshow-btns-container {
   position: fixed;
-  top: 0;
-  left: 50%;
+  right: 0;
+  top: 20%;
+  z-index: 10;
 }
 
 a.com-rigsomelight-devcards-slideshow-btn,
@@ -25,6 +26,7 @@ a.com-rigsomelight-devcards-slideshow-btn:hover {
   padding: 2px;
   text-decoration: none;
   color: #428bca;
+  font-family:  'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   &, &:visited, &:active, &:hover {
     text-decoration: none;
@@ -32,11 +34,32 @@ a.com-rigsomelight-devcards-slideshow-btn:hover {
   }
 }
 
-.com-rigsomelight-devcards-slideshow .com-rigsomelight-devcard {
-  opacity: 0.5;
+.com-rigsomelight-devcards-slideshow
+.com-rigsomelight-devcard:not(.com-rigsomelight-devcard-slideshow-active) {
+  /* zoom: 0.8; */
+}
+.com-rigsomelight-devcards-slideshow
+.com-rigsomelight-devcard:not(.com-rigsomelight-devcard-slideshow-active) {
+  position: relative;
+}
+
+.com-rigsomelight-devcards-slideshow
+.com-rigsomelight-devcard:not(.com-rigsomelight-devcard-slideshow-active):before {
+  content: '';
+  background: rgba(255,255,255,0.75);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  overflow:hidden;
 }
 
 .com-rigsomelight-devcards-slideshow
   .com-rigsomelight-devcard.com-rigsomelight-devcard-slideshow-active {
-  opacity: 1.0;
+  zoom: 1.2;
+  border: 1px solid #888;
+  -webkit-box-shadow: 0px 0px 46px 14px rgba(187,187,187,1);
+  -moz-box-shadow: 0px 0px 46px 14px rgba(187,187,187,1);
+  box-shadow: 0px 0px 46px 14px rgba(187,187,187,1);
+  margin: 2em 0;
 }
