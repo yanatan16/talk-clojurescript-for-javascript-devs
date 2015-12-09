@@ -6,7 +6,7 @@
 
 (defn html-using-innerhtml [el]
   (set! (.-innerHTML el)
-        "<h2>This is inserted using innerHTML</h2>"))
+        "<h2>This is inserted using HELLO innerHTML</h2>"))
 
 (defcard-doc
   "# Rendering HTML using `el.innerHtml`"
@@ -16,6 +16,9 @@
   (dc/dom-node
    (fn [_ el]
      (html-using-innerhtml el))))
+
+(defcard test-card
+  (html [:h1 "Code && Coffee"]))
 
 
 ;; Rendering HTML using createElement

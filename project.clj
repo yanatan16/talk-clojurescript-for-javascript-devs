@@ -14,7 +14,8 @@
                  [sablono "0.5.1"]
                  [devcards "0.2.1-2" :exclusions [cljsjs/react cljsjs/react-dom]]
                  [reagent "0.5.1" :exclusions [cljsjs/react cljsjs/react-dom]]
-
+                 [om "0.8.0-rc1" :exclusions [cljsjs/react]]
+                 [hickory "0.5.4"]
 
                  [cljsjs/react "0.14.3-0"]
                  [cljsjs/react-dom "0.14.3-1"]

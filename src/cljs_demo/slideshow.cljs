@@ -58,6 +58,8 @@
   (swap! state dissoc (get-hash))
   (.removeEventListener js/window "keydown" on-key-down))
 
+(.addEventListener js/window "hashchange" stop-slideshow!)
+
 (defn buttons []
   (let [active (some? (get @state (get-hash)))]
     [:div.com-rigsomelight-devcards-slideshow-btns
