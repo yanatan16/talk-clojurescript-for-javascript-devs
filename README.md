@@ -18,7 +18,12 @@ A talk I'm giving at DenverScript on Jan 26 2015.
     - figwheel reload semantics
 - Reagent
     - figwheel reload doesn't touch app state
-- core.async
+    - core.async
+
+## TODO
+
+- add clojure section
+- add node cljs section
 
 ## Setup
 
