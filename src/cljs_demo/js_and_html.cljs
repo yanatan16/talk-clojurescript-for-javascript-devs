@@ -6,39 +6,43 @@
 
 (defn html-using-innerhtml [el]
   (set! (.-innerHTML el)
-        "<h2>This is inserted using HELLO innerHTML</h2>"))
+        "<h2>This is inserted using innerHTML</h2>"))
 
 (defcard-doc
   "# Rendering HTML using `el.innerHtml`"
-  (dc/mkdn-pprint-source html-using-innerhtml))
+  (dc/mkdn-pprint-source html-using-innerhtml)
+  "```javascript
+function html_using_innerhtml(el) {
+  el.innerHTML = \"<h2>This is inserted using innerHTML</h2>\";
+}
+```")
 
 (defcard rendering-html-innerhtml
   (dc/dom-node
    (fn [_ el]
      (html-using-innerhtml el))))
 
-(defcard test-card
-  (html [:h1 "Code && Coffee"]))
-
-
 ;; Rendering HTML using createElement
 ;; (and cljs callbacks)
 
-(defn- on-click [e]
+(defn on-click [e]
   ;; We can call global functions
   (js/alert "Button was clicked"))
 
-(defn- create-button []
+(defn create-button []
   ;; We can save the response of a js interop function call
+  ;;=> var btn = document.createElement("button")
   (let [btn (.createElement js/document "button")]
     ;; We can set values on js objects
+    ;;=> btn.innerText = "Click Me"
     (set! (.-innerText btn) "Click Me")
     ;; We can pass cljs functions as callbacks
+    ;;=> btn.addEventListener("click", on_click)
     (.addEventListener btn "click" on-click)
     ;; return btn
     btn))
 
-(defn- insert-button [div]
+(defn insert-button [div]
   ;; We can append the dom with js interop
   (.appendChild div (create-button)))
 
@@ -95,3 +99,5 @@
           [:h3 "Table"] (table-using-hiccup 3)]
          [:div {:style {:display "inline-block"}}
           [:h3 "Attrs"] (attrs-using-hiccup)]]))
+
+(defcard-doc "[Next: Using React](#!/cljs_demo.react)")

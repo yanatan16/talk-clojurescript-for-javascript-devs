@@ -3,9 +3,9 @@
             [sablono.core :as html :refer-macros [html]]))
 
 (defcard-doc
-  "# Leinigen
+  "# Leiningen
 
-Usually called just `lein`.
+Usually called just `lein`. Download at [leiningen.org](http://leiningen.org/).
 
 This is your clojure and clojurescript builder/tester/general CLI tool.
 
@@ -67,9 +67,12 @@ $ tree
 (defcard figwheel-demo
   "# Figwheel
 
-`figwheel` is a live hot-code reloading plugin."
+`figwheel` is a live hot-code reloading plugin.
 
-  (html [:div [:h2 "Hello DenverScript"]]))
+We can edit the clojurescript code (and CSS) and have this element change."
+
+  (html [:div [:h2.hello-denverscript
+               "Hello World"]]))
 
 (defcard-doc
   "# REPL
@@ -98,3 +101,5 @@ Interact with the clojurescript environment and return a result"
            [:h3 (:text @data-atom)]
            [:p "Count is " [:span (:count @data-atom)]]]))
   repl-demo-state)
+
+(defcard-doc "[Next: A Brief Tour of Clojure](#!/cljs_demo.clj_tour)")

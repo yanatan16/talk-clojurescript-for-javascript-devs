@@ -19,7 +19,6 @@ I'm **Jon Eisen**
 I live, work, and play in Boulder, CO.
 
 
-- Embedded programming
 - Distributed systems
 - Modern devops
 - Web full stack
@@ -33,7 +32,10 @@ Nice to meet you!")
   "# Contents
 
 1. Introductions
-2. First Steps
-3. Using JS
-4. React with Om and Reagent
-5. Async Programming with core.async")
+2. First Steps in Clojurescript
+3. Clojure language
+4. Using JS from Clojurescript
+5. React with Om and Reagent
+6. Async Programming with core.async")
+
+(defcard-doc "[Next: First Steps](#!/cljs_demo.first_steps)")

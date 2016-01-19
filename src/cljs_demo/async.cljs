@@ -3,7 +3,7 @@
   (:require-macros [cljs.core.async.macros :refer [go go-loop]])
   (:require [devcards.core :as dc :refer-macros [defcard-rg defcard-doc]]
             [cljs.core.async :refer [chan >! <! pipe]]
-            [ajax.core :refer [GET]]
+            [ajax.core :as ajax]
             [clojure.string :as str]
             [reagent.core :as reagent]
             [cljs.core.async :refer [<! >! chan] :as async]
@@ -12,6 +12,7 @@
   (:import [goog Uri]))
 
 (def medical-marijuana-url "https://data.colorado.gov/api/views/7wau-rnkf/rows.csv?accessType=DOWNLOAD")
+
 ;;;;;;;;;;;;;;;;;;;;
 ;; Ajax functions ;;
 ;;;;;;;;;;;;;;;;;;;;
@@ -20,7 +21,7 @@
   "Wrap a GET request in a core.async channel"
   [url]
   (let [c (chan)] ; Create a core.async channel
-    (GET url {:handler #(go (>! c %))}) ; Place response on channel
+    (ajax/GET url {:handler #(go (>! c %))}) ; Place response on channel
     c) ; return the channel
   )
 
@@ -34,18 +35,17 @@
   "Get a url and parse its successful response as csv
    Return a core.async channel of parsed csv"
   [url]
-  (pipe (ajax-get url) ;; Pipe connects two channels
-        (chan 1 (map parse-csv))) ;; Create a "mapping" channel
-  )
+  (let [c (chan)]
+    (go (let [resp (<! (ajax-get url))]
+          (>! c (parse-csv resp))))
+    c))
 
 (defn get-mj-data
   "Get medical marijuana usage data as parsed CSV and update atom"
   [state-atom]
-  (let [data-atom (reagent/cursor state-atom [:mj-data])]
-    (go (->> (ajax-get-csv medical-marijuana-url) ;; ajax query
-             <! ;; asynchronously pull data off of channel
-             (reset! data-atom)) ;; update atom
-        )))
+  (go
+    (let [parsed-resp (<! (ajax-get-csv medical-marijuana-url))]
+      (swap! state-atom assoc :mj-data parsed-resp))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Reagent Components ;;
@@ -77,16 +77,18 @@
 (defcard-doc
   "# Async Programming"
   "Using `core.async`, we can do asynchronous programming with **no callbacks**"
-  "`core.async` provides a _library_ that works like go's concurrency model"
-  "In Clojure and Clojurescript"
-  (dc/mkdn-pprint-source ajax-get)
-  (dc/mkdn-pprint-source ajax-get-csv)
-  (dc/mkdn-pprint-source get-mj-data))
+  "`core.async` provides a _library_ that works like go's concurrency model in Clojure and Clojurescript")
 
 (defcard-rg mj-data-card
   (fn [state-atom _]
     [mj-component state-atom])
   (reagent/atom {}))
+
+(defcard-doc
+  "## `mj-data-card` source"
+  (dc/mkdn-pprint-source ajax-get)
+  (dc/mkdn-pprint-source ajax-get-csv)
+  (dc/mkdn-pprint-source get-mj-data))
 
 ;; Web Crawler
 
@@ -163,12 +165,8 @@
     [:ul (for [log @log-atom]
            [:ul log])]]])
 
-(defcard-doc
-  "# Web Crawler"
-  "Query a site, parse out urls referenced and crawl them.
-   Go `n` levels deep."
-  (dc/mkdn-pprint-source crawl-url)
-  (dc/mkdn-pprint-source web-crawler))
+
+
 
 (defcard-rg web-crawler
   (fn [state-atom _]
@@ -179,3 +177,12 @@
   (reagent/atom {:url "http://joneisen.works"
                  :depth 1
                  :log []}))
+
+(defcard-doc
+  "# Web Crawler"
+  "Query a site, parse out urls referenced and crawl them.
+   Go `n` levels deep."
+  (dc/mkdn-pprint-source crawl-url)
+  (dc/mkdn-pprint-source web-crawler))
+
+(defcard-doc "[Next: Closing](#!/cljs_demo.closing)")
