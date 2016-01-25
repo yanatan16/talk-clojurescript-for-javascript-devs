@@ -11,7 +11,7 @@
                  [org.clojure/clojurescript "1.7.170"]
                  [org.clojure/core.async "0.2.374"]
                  [cljs-ajax "0.5.1"]
-                 [sablono "0.5.1"]
+                 [sablono "0.5.1" :exclusions [cljsjs/react cljsjs/react-dom cljsjs/react-dom-server]]
                  [devcards "0.2.1-2" :exclusions [cljsjs/react cljsjs/react-dom]]
                  [reagent "0.5.1" :exclusions [cljsjs/react cljsjs/react-dom]]
                  [om "0.8.0-rc1" :exclusions [cljsjs/react]]
