@@ -69,7 +69,9 @@ $ tree
 
 `figwheel` is a live hot-code reloading plugin.
 
-We can edit the clojurescript code (and CSS) and have this element change."
+We can edit the clojurescript code (and CSS) and have this element change.
+
+_Try editing `/src/cljs_demo/first_steps.cljs` and watch this element change._"
 
   (html [:div [:h2.hello-denverscript
                "Hello World"]]))
@@ -78,7 +80,9 @@ We can edit the clojurescript code (and CSS) and have this element change."
   "# REPL
 ## (Read Evaluate Print Loop)
 
-Interact with the clojurescript environment and return a result"
+Interact with the clojurescript environment and return a result.
+
+_Try using the repl in `lein figwheel` or `cider` to execute these statements_"
 
 "```clojure
 (+ 1 2)
@@ -90,6 +94,8 @@ Interact with the clojurescript environment and return a result"
 (defonce repl-demo-state (atom {:text "This is changable" :count 50}))
 (defcard repl-demo
   "# REPL can interact with App
+
+_Try executing these statements in your repl, and watch what happens!_
 
 ```clojure
 (ns cljs-demo.first-steps)
