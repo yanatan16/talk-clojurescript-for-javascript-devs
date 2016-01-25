@@ -14,4 +14,4 @@ goog.require('cljs_demo.clj_tour');
 devcards.core.start_devcard_ui_BANG__STAR_.call(null);
 cljs.core.enable_console_print_BANG_.call(null);
 
-//# sourceMappingURL=core.js.map?rel=1453744594665
+//# sourceMappingURL=core.js.map?rel=1453744777982

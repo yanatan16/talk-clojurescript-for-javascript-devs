@@ -12,7 +12,7 @@
   "## Resources
 
 - [Clojurescript Quick Start](https://github.com/clojure/clojurescript/wiki/Quick-Start)
-- [Modern Clojurescript Tutorials](https://github.com/magomimmo/modern-cljs)
+- [Modern Clojurescript Tutofrials](https://github.com/magomimmo/modern-cljs)
 - [Clojure for the Brave and True: core.async](http://www.braveclojure.com/core-async/)
 - [Reagent TodoMVC](http://todomvc.com/examples/reagent/)
 - [Om Tutorial](https://github.com/omcljs/om/wiki/Basic-Tutorial)"
