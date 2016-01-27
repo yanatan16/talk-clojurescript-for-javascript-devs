@@ -5,11 +5,13 @@
 (defcard-doc
   "# Clojurescript For Javascript Developers
 
-## A Demonstration
+## An Introductory Demonstration
 
 ### by Jon Eisen
 
-_DenverScript Meetup, January 26, 2015_")
+_DenverScript Meetup, January 26, 2015_
+
+<img src=\"/img/tyson.jpeg\" style=\"float: right; position: relative; top: -150px\" width=\"150px\">")
 
 (defcard-doc
   "# Introductions
@@ -21,6 +23,7 @@ I live, work, and play in Boulder, CO.
 - Distributed systems
 - Modern devops
 - Web full stack
+- Freelance (hire me @ [joneisen.works](http://joneisen.works))
 
 Nice to meet you!")
 
@@ -30,6 +33,8 @@ Nice to meet you!")
 (defcard-doc
   "# Contents
 
+_Audience_: Aimed at the experienced developer new to Clojure[script].
+
 1. Introductions
 2. First Steps in Clojurescript
 3. Clojure language
@@ -37,7 +42,7 @@ Nice to meet you!")
 5. React with Om and Reagent
 6. Async Programming with core.async
 
-Follow along at http://joneisen.me/talk-clojurescript-for-javascript-devs")
+Follow along at [joneisen.me/talk-clojurescript-for-javascript-devs](http://joneisen.me/talk-clojurescript-for-javascript-devs)")
 
 (defcard-doc
   "# Formatting

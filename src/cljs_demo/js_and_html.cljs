@@ -2,6 +2,11 @@
   (:require [devcards.core :as dc :refer-macros [defcard defcard-doc dom-node]]
             [sablono.core :as html :refer-macros [html]]))
 
+(defcard-doc
+  "# Using JS and HTML
+
+- Using straight-up javascript and global functions
+- Rendering html using Hiccup")
 ;; Rendering HTML using innerHTML
 
 (defn html-using-innerhtml [el]
@@ -9,8 +14,9 @@
         "<h2>This is inserted using innerHTML</h2>"))
 
 (defcard-doc
-  "# Rendering HTML using `el.innerHtml`"
+  "# Rendering HTML using `el.innerHTML`"
   (dc/mkdn-pprint-source html-using-innerhtml)
+  "compiles to..."
   "```javascript
 function html_using_innerhtml(el) {
   el.innerHTML = \"<h2>This is inserted using innerHTML</h2>\";
@@ -18,6 +24,7 @@ function html_using_innerhtml(el) {
 ```")
 
 (defcard rendering-html-innerhtml
+  "_Rendered using above code with `el.innerHTML`_"
   (dc/dom-node
    (fn [_ el]
      (html-using-innerhtml el))))
@@ -55,12 +62,14 @@ function html_using_innerhtml(el) {
 (defcard-doc
   "## Rendering HTML with `document.createElement`"
   (dc/mkdn-pprint-source create-button)
-  (dc/mkdn-pprint-source insert-button)
+  (dc/mkdn-pprint-source insert-button))
 
+(defcard-doc
   "_Note_: The callback is just a regular cljs function"
   (dc/mkdn-pprint-source on-click))
 
 (defcard rendering-html-createElement
+  "_Rendered using above code, creating and inserting the button with `appendChild`_"
   (dom-node
    (fn [_ el]
      (set! (.-innerHTML el) "")
@@ -69,11 +78,13 @@ function html_using_innerhtml(el) {
 ;; Rendering HTML Using hiccup
 
 (defn table-using-hiccup [n-rows]
-  [:table
+  [:table ; <table>
+   ;; Children of <table>
    [:thead [:tr [:th "Index"] [:th "Value"]]]
    [:tbody
     (for [i (range 0 n-rows)]
-      [:tr {:key i} [:td i] [:td "Value for " i]])]])
+      [:tr {:key i}
+       [:td i] [:td "Value for " i]])]])
 
 (defn attrs-using-hiccup []
   [:div.example-class {:style {:background "blue"
@@ -93,6 +104,7 @@ function html_using_innerhtml(el) {
   (dc/mkdn-pprint-source attrs-using-hiccup))
 
 (defcard rendering-html-hiccup
+  "_Rendered using above code with hiccup._"
   (html [:div
          [:div {:style {:display "inline-block"
                         :margin "2em"}}
