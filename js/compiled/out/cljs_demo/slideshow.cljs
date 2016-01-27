@@ -70,7 +70,10 @@
          (stop-slideshow!))
     nil))
 
-(.addEventListener js/window "hashchange" stop-slideshow! false)
+(.addEventListener js/window "hashchange"
+                   #(when (:on @state)
+                      (stop-slideshow!)
+                      (js/setTimeout start-slideshow! 200)) false)
 
 (defn buttons []
   (let [active (get @state :on)]

@@ -77,18 +77,26 @@
 (defcard-doc
   "# Async Programming"
   "Using `core.async`, we can do asynchronous programming with **no callbacks**"
-  "`core.async` provides a _library_ that works like go's concurrency model in Clojure and Clojurescript")
+  "`core.async` provides a _library_ that works like go's concurrency model in Clojure and Clojurescript"
+  "- Channels `(chan)`
+   - \"goroutines\" or green threads `(go)`
+   - Points of concurrency at `<!` (\"take\") and `>!` (\"put\")")
 
-(defcard-rg mj-data-card
+(defcard-rg async-example1-mj-data-card
+  "_A table of medical marijuana data stored at data.colorado.gov_"
   (fn [state-atom _]
     [mj-component state-atom])
   (reagent/atom {}))
 
 (defcard-doc
   "## `mj-data-card` source"
-  (dc/mkdn-pprint-source ajax-get)
-  (dc/mkdn-pprint-source ajax-get-csv)
   (dc/mkdn-pprint-source get-mj-data))
+
+(defcard-doc
+  "## `ajax-get-csv` and `ajax-get`"
+  (dc/mkdn-pprint-source ajax-get-csv)
+  (dc/mkdn-pprint-source ajax-get))
+
 
 ;; Web Crawler
 
@@ -126,6 +134,7 @@
   "Query a url and parse out urls inside of it"
   [url]
   (let [c (chan)]
+     ;; ->>: Thread macro allows pipelining functions
     (go (->> (<! (ajax-get url)) ; get the page
              parse-html
              select-urls         ; get a list of urls in page
@@ -150,25 +159,29 @@
 
 (defn web-crawler-component [url-atom depth-atom log-atom]
   [:div
-   [:label "Url to query: "]
-   [:input {:type "text"
-            :value @url-atom
-            :on-change #(reset! url-atom (.. % -target -value))}]
-   [:input {:type "number"
-            :value @depth-atom
-            :on-change #(reset! depth-atom (.. % -target -value))}]
+   [:div [:label "Url to query: "]
+    [:input {:type "text"
+             :value @url-atom
+             :on-change #(reset! url-atom (.. % -target -value))}]]
+
+   [:div [:label "Depth to go: "]
+    [:input {:type "number"
+             :value @depth-atom
+             :on-change #(reset! depth-atom (.. % -target -value))}]]
    [:button {:on-click #(do (reset! log-atom [])
                             (web-crawler @url-atom @depth-atom log-atom))}
     "Crawl!"]
    [:div
-    [:h3 "Crawled URLs"]
+    [:h3 "Crawled URLs:"]
     [:ul (for [log @log-atom]
            [:ul log])]]])
 
 
 
 
-(defcard-rg web-crawler
+(defcard-rg async-example2-web-crawler
+  "# Web Crawler
+  _Query a site, parse out urls referenced, and crawl them_"
   (fn [state-atom _]
     [web-crawler-component
      (reagent/cursor state-atom [:url])
@@ -182,7 +195,9 @@
   "# Web Crawler"
   "Query a site, parse out urls referenced and crawl them.
    Go `n` levels deep."
-  (dc/mkdn-pprint-source crawl-url)
   (dc/mkdn-pprint-source web-crawler))
+
+(defcard-doc
+  (dc/mkdn-pprint-source crawl-url))
 
 (defcard-doc "[Next: Closing](#!/cljs_demo.closing)")

@@ -31,10 +31,10 @@ return cljs_demo.slideshow.get_by_class.call(null,cljs_demo.slideshow.devcard_cl
 });
 cljs_demo.slideshow.swap_active_class_BANG_ = (function cljs_demo$slideshow$swap_active_class_BANG_(from,to){
 var slides = cljs_demo.slideshow.get_by_class.call(null,cljs_demo.slideshow.devcard_class);
-var temp__4425__auto___38843 = slides.item(from);
-if(cljs.core.truth_(temp__4425__auto___38843)){
-var slide_38844 = temp__4425__auto___38843;
-cljs_demo.slideshow.remove_class.call(null,slide_38844,cljs_demo.slideshow.active_slide_class);
+var temp__4425__auto___48919 = slides.item(from);
+if(cljs.core.truth_(temp__4425__auto___48919)){
+var slide_48920 = temp__4425__auto___48919;
+cljs_demo.slideshow.remove_class.call(null,slide_48920,cljs_demo.slideshow.active_slide_class);
 } else {
 }
 
@@ -81,8 +81,8 @@ cljs_demo.slideshow.remove_class.call(null,cljs_demo.slideshow.container.call(nu
 return cljs.core.swap_BANG_.call(null,cljs_demo.slideshow.state,cljs.core.assoc,new cljs.core.Keyword(null,"on","on",173873944),false,new cljs.core.Keyword(null,"n","n",562130025),(0));
 });
 cljs_demo.slideshow.on_key_down = (function cljs_demo$slideshow$on_key_down(e){
-var G__38846 = e.keyCode;
-switch (G__38846) {
+var G__48922 = e.keyCode;
+switch (G__48922) {
 case (40):
 if(cljs.core.truth_(new cljs.core.Keyword(null,"on","on",173873944).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,cljs_demo.slideshow.state)))){
 cljs_demo.slideshow.swap_slide_BANG_.call(null,cljs.core.inc);
@@ -124,30 +124,38 @@ return null;
 
 }
 });
-window.addEventListener("hashchange",cljs_demo.slideshow.stop_slideshow_BANG_,false);
+window.addEventListener("hashchange",(function (){
+if(cljs.core.truth_(new cljs.core.Keyword(null,"on","on",173873944).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,cljs_demo.slideshow.state)))){
+cljs_demo.slideshow.stop_slideshow_BANG_.call(null);
+
+return setTimeout(cljs_demo.slideshow.start_slideshow_BANG_,(200));
+} else {
+return null;
+}
+}),false);
 cljs_demo.slideshow.buttons = (function cljs_demo$slideshow$buttons(){
 var active = cljs.core.get.call(null,cljs.core.deref.call(null,cljs_demo.slideshow.state),new cljs.core.Keyword(null,"on","on",173873944));
 return new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div.com-rigsomelight-devcards-slideshow-btns","div.com-rigsomelight-devcards-slideshow-btns",2099136980),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"a.com-rigsomelight-devcards-slideshow-btn","a.com-rigsomelight-devcards-slideshow-btn",-1523573810),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"href","href",-793805698),"#",new cljs.core.Keyword(null,"on-click","on-click",1632826543),((function (active){
-return (function (p1__38848_SHARP_){
-p1__38848_SHARP_.preventDefault();
+return (function (p1__48924_SHARP_){
+p1__48924_SHARP_.preventDefault();
 
 return cljs_demo.slideshow.start_slideshow_BANG_.call(null);
 });})(active))
 ,new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"display","display",242065432),(cljs.core.truth_(active)?"none":"")], null)], null),"Start Slideshow"], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"a.com-rigsomelight-devcards-slideshow-btn","a.com-rigsomelight-devcards-slideshow-btn",-1523573810),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"href","href",-793805698),"#",new cljs.core.Keyword(null,"on-click","on-click",1632826543),((function (active){
-return (function (p1__38849_SHARP_){
-p1__38849_SHARP_.preventDefault();
+return (function (p1__48925_SHARP_){
+p1__48925_SHARP_.preventDefault();
 
 return cljs_demo.slideshow.swap_slide_BANG_.call(null,cljs.core.inc);
 });})(active))
 ,new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"display","display",242065432),(cljs.core.truth_(active)?"":"none")], null)], null),"Next"], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"a.com-rigsomelight-devcards-slideshow-btn","a.com-rigsomelight-devcards-slideshow-btn",-1523573810),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"href","href",-793805698),"#",new cljs.core.Keyword(null,"on-click","on-click",1632826543),((function (active){
-return (function (p1__38850_SHARP_){
-p1__38850_SHARP_.preventDefault();
+return (function (p1__48926_SHARP_){
+p1__48926_SHARP_.preventDefault();
 
 return cljs_demo.slideshow.swap_slide_BANG_.call(null,cljs.core.dec);
 });})(active))
 ,new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"display","display",242065432),(cljs.core.truth_(active)?"":"none")], null)], null),"Previous"], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"a.com-rigsomelight-devcards-slideshow-btn","a.com-rigsomelight-devcards-slideshow-btn",-1523573810),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"href","href",-793805698),"#",new cljs.core.Keyword(null,"on-click","on-click",1632826543),((function (active){
-return (function (p1__38851_SHARP_){
-p1__38851_SHARP_.preventDefault();
+return (function (p1__48927_SHARP_){
+p1__48927_SHARP_.preventDefault();
 
 return cljs_demo.slideshow.stop_slideshow_BANG_.call(null);
 });})(active))
@@ -170,4 +178,4 @@ return cljs_demo.slideshow.insert_buttons.call(null);
 }),(2000));
 }
 
-//# sourceMappingURL=slideshow.js.map?rel=1453744768148
+//# sourceMappingURL=slideshow.js.map?rel=1453852272577

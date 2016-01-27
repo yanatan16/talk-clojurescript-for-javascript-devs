@@ -11,7 +11,9 @@
 
 ### Reagent: minimalistic and flexible
 
-### Om: explicit, feature-full, with more structure")
+### Om: explicit, feature-full, with more structure
+
+Both emphasize Flux-style development")
 
 ;; Reagent
 
@@ -30,9 +32,6 @@
    ;; Brackets mean a sub-component with own lifecycle
    [reagent-input-component :hello state-atom]
 
-   ;; Parens mean an "inline" component
-   (reagent-input-component :who state-atom)
-
    ;; Show current state
    [:div {:style {:margin-top 10}}
     (edn-rend/html-edn @state-atom)]])
@@ -41,15 +40,23 @@
   "# Reagent"
   "- Functions that return HTML are React components
    - Uses hiccup syntax for rendering html
-   - Change underlying state with atom functions"
-  (dc/mkdn-pprint-source reagent-input-component)
+   - Change underlying state with atom functions
+   - Monitors which functions access what state and re-renders when necessary"
+  "[Reagent on Github](https://github.com/reagent-project/reagent)")
+
+(defcard-doc
+  "## A reusable component in reagent"
+  (dc/mkdn-pprint-source reagent-input-component))
+
+(defcard-doc
+  "## Using the reusable component"
   (dc/mkdn-pprint-source reagent-edit-state-component))
 
 (defcard reagent-card
+  "_Rendered using above Reagent components_"
   (dc/reagent (fn [state-atom _]
                 [reagent-edit-state-component state-atom]))
-  (reagent/atom {:hello "Hello"
-                 :who "Who"}))
+  (reagent/atom {:hello "Hello"}))
 
 ;; Om
 
@@ -80,10 +87,10 @@
   "## `sablono' rendering syntax (hiccupish):"
   (dc/mkdn-pprint-source om-widget-sablono))
 
-(defcard om-widget-dom
+#_(defcard om-widget-dom
   (dc/om-root om-widget-dom)
   {:text "yep"})
-(defcard om-widget-sablono
+#_(defcard om-widget-sablonof
   (dc/om-root om-widget-sablono)
   {:text "yep"})
 
@@ -99,8 +106,7 @@
     [:div
      [:h1 (om/get-shared owner :title) (:count data)]
      [:div [:button {:onClick #(om/transact! data :count inc)}
-            "inc"]]
-     (dc/edn data)])))
+            "inc"]]])))
 
 (defn om-counter-inc [data owner] (counter data owner))
 
@@ -113,9 +119,10 @@
   (dc/mkdn-pprint-source counter))
 
 (dc/defcard-om omcard-state-mgmt
+  "_Rendered using Om counter component_"
   om-counter-inc
   om-test-atom
-  {:shared {:title "First counter "}})
+  {:shared {:title "Counter State: "}})
 
 (defcard-doc
   "[Next: Async in Clojurescript](#!/cljs_demo.async)")

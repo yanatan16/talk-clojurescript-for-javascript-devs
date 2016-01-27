@@ -10,7 +10,9 @@ Clojure has...
 - immutable data structures
 - a large standard library and ecosystem
 - concurrency control
-- code-as-data macro system")
+- code-as-data macro system
+
+<img src=\"/img/clojure.gif\" style=\"float:right;position:relative;top:-100px;\" width=\"100px\">")
 
 (defcard-doc
   "## Conditionals and Functions
@@ -26,7 +28,8 @@ Clojure has...
 (def say-hello-2 #(println \"Hello\" %))
 
 ;; Call a function
-(say-hello \"World\")
+(say-hello) ;=> \"Hello Unnamed Individual\"
+(say-hello-2 \"World\") ;=> \"Hello World\"
 ```")
 
 (defcard-doc
@@ -70,7 +73,7 @@ Clojure (JVM) and Clojurescript (JS) can share the same code. Using reader condi
 
 ```clojure
 (println \"I'm in\" #?(:clj \"Clojure\"
-                       :cljs \"Clojurescript\"))
+                     :cljs \"Clojurescript\"))
 ```")
 
 (defcard-doc "[Next: JS Interop](#!/cljs_demo.js_and_html)")

@@ -3,6 +3,16 @@
             [sablono.core :as html :refer-macros [html]]))
 
 (defcard-doc
+  "# First Steps
+
+Let's setup and use a project:
+
+- Leiningen
+- `package.json`
+- Figwheel
+- The REPL")
+
+(defcard-doc
   "# Leiningen
 
 Usually called just `lein`. Download at [leiningen.org](http://leiningen.org/).
@@ -22,9 +32,9 @@ Successfully compiled \"resources/public/js/compiled/my_project.js\" in 1.452 se
 ```")
 
 (defcard-doc
-  "# Organization of a Project
+  "## Organization of a Project
 
-```bash
+```none
 $ tree
 .
 ├── README.md
@@ -32,12 +42,16 @@ $ tree
 ├── resources
 │   └── public
 │       ├── css
-│       │   └── style.css
 │       ├── index.html
 │       └── js
 └── src
-    └── my_project
+ └── my_project
         └── core.cljs
+└── test
+ └── my_project
+        └── core_test.cljs
+
+
 
 6 directories, 5 files
 ```")
@@ -74,7 +88,7 @@ We can edit the clojurescript code (and CSS) and have this element change.
 _Try editing `/src/cljs_demo/first_steps.cljs` and watch this element change._"
 
   (html [:div [:h2.hello-denverscript
-               "Hello World"]]))
+               "Hello DenverScript"]]))
 
 (defcard-doc
   "# REPL
