@@ -8,11 +8,11 @@ goog.require('clojure.zip');
  */
 hickory.zip.hickory_zip = (function hickory$zip$hickory_zip(root){
 return clojure.zip.zipper.call(null,cljs.core.complement.call(null,cljs.core.string_QMARK_),cljs.core.comp.call(null,cljs.core.seq,new cljs.core.Keyword(null,"content","content",15833224)),(function (node,children){
-return cljs.core.assoc.call(null,node,new cljs.core.Keyword(null,"content","content",15833224),(function (){var and__23774__auto__ = children;
-if(cljs.core.truth_(and__23774__auto__)){
+return cljs.core.assoc.call(null,node,new cljs.core.Keyword(null,"content","content",15833224),(function (){var and__4656__auto__ = children;
+if(cljs.core.truth_(and__4656__auto__)){
 return cljs.core.apply.call(null,cljs.core.vector,children);
 } else {
-return and__23774__auto__;
+return and__4656__auto__;
 }
 })());
 }),root);
@@ -53,4 +53,4 @@ hickory.zip.hiccup_zip = (function hickory$zip$hiccup_zip(root){
 return clojure.zip.zipper.call(null,cljs.core.sequential_QMARK_,hickory.zip.children,hickory.zip.make,root);
 });
 
-//# sourceMappingURL=zip.js.map?rel=1453744774914
+//# sourceMappingURL=zip.js.map?rel=1453863896799

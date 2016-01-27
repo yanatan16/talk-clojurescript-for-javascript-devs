@@ -40,10 +40,10 @@ return React.createElement("span",{"className": class$, "key": devcards.util.edn
 devcards.util.edn_renderer.join_html = (function devcards$util$edn_renderer$join_html(separator,coll){
 return devcards.util.edn_renderer.interpose_separator.call(null,cljs.core.mapv.call(null,devcards.util.edn_renderer.html,coll),separator,devcards.util.edn_renderer.separate_fn.call(null,coll));
 });
-devcards.util.edn_renderer.html_keyval = (function devcards$util$edn_renderer$html_keyval(p__43148){
-var vec__43150 = p__43148;
-var k = cljs.core.nth.call(null,vec__43150,(0),null);
-var v = cljs.core.nth.call(null,vec__43150,(1),null);
+devcards.util.edn_renderer.html_keyval = (function devcards$util$edn_renderer$html_keyval(p__12047){
+var vec__12049 = p__12047;
+var k = cljs.core.nth.call(null,vec__12049,(0),null);
+var v = cljs.core.nth.call(null,vec__12049,(1),null);
 return React.createElement("span",{"key": cljs.core.prn_str.call(null,k), "className": "keyval"},sablono.interpreter.interpret.call(null,devcards.util.edn_renderer.html.call(null,k)),sablono.interpreter.interpret.call(null,devcards.util.edn_renderer.html.call(null,v)));
 });
 devcards.util.edn_renderer.html_keyvals = (function devcards$util$edn_renderer$html_keyvals(coll){
@@ -98,12 +98,12 @@ return devcards.util.edn_renderer.literal.call(null,"literal",x);
 }
 });
 devcards.util.edn_renderer.html_edn = (function devcards$util$edn_renderer$html_edn(e){
-var _STAR_key_counter_STAR_43153 = devcards.util.edn_renderer._STAR_key_counter_STAR_;
+var _STAR_key_counter_STAR_12052 = devcards.util.edn_renderer._STAR_key_counter_STAR_;
 devcards.util.edn_renderer._STAR_key_counter_STAR_ = cljs.core.atom.call(null,(0));
 
-try{var attrs43154 = devcards.util.edn_renderer.html.call(null,e);
-return cljs.core.apply.call(null,React.createElement,"div",((cljs.core.map_QMARK_.call(null,attrs43154))?sablono.interpreter.attributes.call(null,sablono.util.merge_with_class.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"class","class",-2030961996),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["com-rigsomelight-rendered-edn","com-rigsomelight-devcards-typog"], null)], null),attrs43154)):{"className": "com-rigsomelight-rendered-edn com-rigsomelight-devcards-typog"}),cljs.core.remove.call(null,cljs.core.nil_QMARK_,((cljs.core.map_QMARK_.call(null,attrs43154))?cljs.core.PersistentVector.EMPTY:new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null,attrs43154)], null))));
-}finally {devcards.util.edn_renderer._STAR_key_counter_STAR_ = _STAR_key_counter_STAR_43153;
+try{var attrs12053 = devcards.util.edn_renderer.html.call(null,e);
+return cljs.core.apply.call(null,React.createElement,"div",((cljs.core.map_QMARK_.call(null,attrs12053))?sablono.interpreter.attributes.call(null,sablono.util.merge_with_class.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"class","class",-2030961996),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["com-rigsomelight-rendered-edn","com-rigsomelight-devcards-typog"], null)], null),attrs12053)):{"className": "com-rigsomelight-rendered-edn com-rigsomelight-devcards-typog"}),cljs.core.remove.call(null,cljs.core.nil_QMARK_,((cljs.core.map_QMARK_.call(null,attrs12053))?cljs.core.PersistentVector.EMPTY:new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [sablono.interpreter.interpret.call(null,attrs12053)], null))));
+}finally {devcards.util.edn_renderer._STAR_key_counter_STAR_ = _STAR_key_counter_STAR_12052;
 }});
 
-//# sourceMappingURL=edn_renderer.js.map?rel=1453744772660
+//# sourceMappingURL=edn_renderer.js.map?rel=1453863891161

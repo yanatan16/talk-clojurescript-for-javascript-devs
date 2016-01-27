@@ -15,12 +15,12 @@ var next_val = f.call(null,val);
 if(cljs.core.truth_(pred.call(null,next_val))){
 return next_val;
 } else {
-var G__48354 = f;
-var G__48355 = next_val;
-var G__48356 = pred;
-f = G__48354;
-val = G__48355;
-pred = G__48356;
+var G__17180 = f;
+var G__17181 = next_val;
+var G__17182 = pred;
+f = G__17180;
+val = G__17181;
+pred = G__17182;
 continue;
 }
 break;
@@ -38,10 +38,10 @@ while(true){
 if(cljs.core.truth_(pred.call(null,next_val))){
 return cnt;
 } else {
-var G__48357 = f.call(null,next_val);
-var G__48358 = (cnt + (1));
-next_val = G__48357;
-cnt = G__48358;
+var G__17183 = f.call(null,next_val);
+var G__17184 = (cnt + (1));
+next_val = G__17183;
+cnt = G__17184;
 continue;
 }
 break;
@@ -53,12 +53,12 @@ break;
  * the end.
  */
 hickory.select.next_pred = (function hickory$select$next_pred(hzip_loc,pred){
-return hickory.select.until.call(null,clojure.zip.next,hzip_loc,(function (p1__48359_SHARP_){
-var or__23786__auto__ = clojure.zip.end_QMARK_.call(null,p1__48359_SHARP_);
-if(cljs.core.truth_(or__23786__auto__)){
-return or__23786__auto__;
+return hickory.select.until.call(null,clojure.zip.next,hzip_loc,(function (p1__17185_SHARP_){
+var or__4668__auto__ = clojure.zip.end_QMARK_.call(null,p1__17185_SHARP_);
+if(cljs.core.truth_(or__4668__auto__)){
+return or__4668__auto__;
 } else {
-return pred.call(null,p1__48359_SHARP_);
+return pred.call(null,p1__17185_SHARP_);
 }
 }));
 });
@@ -68,12 +68,12 @@ return pred.call(null,p1__48359_SHARP_);
  * the beginning.
  */
 hickory.select.prev_pred = (function hickory$select$prev_pred(hzip_loc,pred){
-return hickory.select.until.call(null,clojure.zip.prev,hzip_loc,(function (p1__48360_SHARP_){
-var or__23786__auto__ = (p1__48360_SHARP_ == null);
-if(or__23786__auto__){
-return or__23786__auto__;
+return hickory.select.until.call(null,clojure.zip.prev,hzip_loc,(function (p1__17186_SHARP_){
+var or__4668__auto__ = (p1__17186_SHARP_ == null);
+if(or__4668__auto__){
+return or__4668__auto__;
 } else {
-return pred.call(null,p1__48360_SHARP_);
+return pred.call(null,p1__17186_SHARP_);
 }
 }));
 });
@@ -83,12 +83,12 @@ return pred.call(null,p1__48360_SHARP_);
  * the left boundary of the current group of siblings.
  */
 hickory.select.left_pred = (function hickory$select$left_pred(hzip_loc,pred){
-return hickory.select.until.call(null,clojure.zip.left,hzip_loc,(function (p1__48361_SHARP_){
-var or__23786__auto__ = (p1__48361_SHARP_ == null);
-if(or__23786__auto__){
-return or__23786__auto__;
+return hickory.select.until.call(null,clojure.zip.left,hzip_loc,(function (p1__17187_SHARP_){
+var or__4668__auto__ = (p1__17187_SHARP_ == null);
+if(or__4668__auto__){
+return or__4668__auto__;
 } else {
-return pred.call(null,p1__48361_SHARP_);
+return pred.call(null,p1__17187_SHARP_);
 }
 }));
 });
@@ -98,12 +98,12 @@ return pred.call(null,p1__48361_SHARP_);
  * the right boundary of the current group of siblings.
  */
 hickory.select.right_pred = (function hickory$select$right_pred(hzip_loc,pred){
-return hickory.select.until.call(null,clojure.zip.right,hzip_loc,(function (p1__48362_SHARP_){
-var or__23786__auto__ = (p1__48362_SHARP_ == null);
-if(or__23786__auto__){
-return or__23786__auto__;
+return hickory.select.until.call(null,clojure.zip.right,hzip_loc,(function (p1__17188_SHARP_){
+var or__4668__auto__ = (p1__17188_SHARP_ == null);
+if(or__4668__auto__){
+return or__4668__auto__;
 } else {
-return pred.call(null,p1__48362_SHARP_);
+return pred.call(null,p1__17188_SHARP_);
 }
 }));
 });
@@ -112,8 +112,8 @@ return pred.call(null,p1__48362_SHARP_);
  * the given type.
  */
 hickory.select.next_of_node_type = (function hickory$select$next_of_node_type(hzip_loc,node_type){
-return hickory.select.next_pred.call(null,hzip_loc,(function (p1__48363_SHARP_){
-return cljs.core._EQ_.call(null,node_type,new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(clojure.zip.node.call(null,p1__48363_SHARP_)));
+return hickory.select.next_pred.call(null,hzip_loc,(function (p1__17189_SHARP_){
+return cljs.core._EQ_.call(null,node_type,new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(clojure.zip.node.call(null,p1__17189_SHARP_)));
 }));
 });
 /**
@@ -121,8 +121,8 @@ return cljs.core._EQ_.call(null,node_type,new cljs.core.Keyword(null,"type","typ
  * the given type.
  */
 hickory.select.prev_of_node_type = (function hickory$select$prev_of_node_type(hzip_loc,node_type){
-return hickory.select.prev_pred.call(null,hzip_loc,(function (p1__48364_SHARP_){
-return cljs.core._EQ_.call(null,node_type,new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(clojure.zip.node.call(null,p1__48364_SHARP_)));
+return hickory.select.prev_pred.call(null,hzip_loc,(function (p1__17190_SHARP_){
+return cljs.core._EQ_.call(null,node_type,new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(clojure.zip.node.call(null,p1__17190_SHARP_)));
 }));
 });
 /**
@@ -130,8 +130,8 @@ return cljs.core._EQ_.call(null,node_type,new cljs.core.Keyword(null,"type","typ
  * the given type.
  */
 hickory.select.left_of_node_type = (function hickory$select$left_of_node_type(hzip_loc,node_type){
-return hickory.select.left_pred.call(null,hzip_loc,(function (p1__48365_SHARP_){
-return cljs.core._EQ_.call(null,node_type,new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(clojure.zip.node.call(null,p1__48365_SHARP_)));
+return hickory.select.left_pred.call(null,hzip_loc,(function (p1__17191_SHARP_){
+return cljs.core._EQ_.call(null,node_type,new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(clojure.zip.node.call(null,p1__17191_SHARP_)));
 }));
 });
 /**
@@ -139,8 +139,8 @@ return cljs.core._EQ_.call(null,node_type,new cljs.core.Keyword(null,"type","typ
  * the given type.
  */
 hickory.select.right_of_node_type = (function hickory$select$right_of_node_type(hzip_loc,node_type){
-return hickory.select.right_pred.call(null,hzip_loc,(function (p1__48366_SHARP_){
-return cljs.core._EQ_.call(null,node_type,new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(clojure.zip.node.call(null,p1__48366_SHARP_)));
+return hickory.select.right_pred.call(null,hzip_loc,(function (p1__17192_SHARP_){
+return cljs.core._EQ_.call(null,node_type,new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(clojure.zip.node.call(null,p1__17192_SHARP_)));
 }));
 });
 /**
@@ -152,19 +152,19 @@ hickory.select.after_subtree = (function hickory$select$after_subtree(zip_loc){
 if(cljs.core.truth_(clojure.zip.end_QMARK_.call(null,zip_loc))){
 return zip_loc;
 } else {
-var or__23786__auto__ = clojure.zip.right.call(null,zip_loc);
-if(cljs.core.truth_(or__23786__auto__)){
-return or__23786__auto__;
+var or__4668__auto__ = clojure.zip.right.call(null,zip_loc);
+if(cljs.core.truth_(or__4668__auto__)){
+return or__4668__auto__;
 } else {
 var curr_loc = zip_loc;
 while(true){
 if(cljs.core.truth_(clojure.zip.up.call(null,curr_loc))){
-var or__23786__auto____$1 = clojure.zip.right.call(null,clojure.zip.up.call(null,curr_loc));
-if(cljs.core.truth_(or__23786__auto____$1)){
-return or__23786__auto____$1;
+var or__4668__auto____$1 = clojure.zip.right.call(null,clojure.zip.up.call(null,curr_loc));
+if(cljs.core.truth_(or__4668__auto____$1)){
+return or__4668__auto____$1;
 } else {
-var G__48367 = clojure.zip.up.call(null,curr_loc);
-curr_loc = G__48367;
+var G__17193 = clojure.zip.up.call(null,curr_loc);
+curr_loc = G__17193;
 continue;
 }
 } else {
@@ -193,23 +193,23 @@ break;
  * zip/end?.
  */
 hickory.select.select_next_loc = (function hickory$select$select_next_loc(var_args){
-var args48368 = [];
-var len__24844__auto___48371 = arguments.length;
-var i__24845__auto___48372 = (0);
+var args17194 = [];
+var len__5726__auto___17197 = arguments.length;
+var i__5727__auto___17198 = (0);
 while(true){
-if((i__24845__auto___48372 < len__24844__auto___48371)){
-args48368.push((arguments[i__24845__auto___48372]));
+if((i__5727__auto___17198 < len__5726__auto___17197)){
+args17194.push((arguments[i__5727__auto___17198]));
 
-var G__48373 = (i__24845__auto___48372 + (1));
-i__24845__auto___48372 = G__48373;
+var G__17199 = (i__5727__auto___17198 + (1));
+i__5727__auto___17198 = G__17199;
 continue;
 } else {
 }
 break;
 }
 
-var G__48370 = args48368.length;
-switch (G__48370) {
+var G__17196 = args17194.length;
+switch (G__17196) {
 case 2:
 return hickory.select.select_next_loc.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
 
@@ -223,7 +223,7 @@ return hickory.select.select_next_loc.cljs$core$IFn$_invoke$arity$4((arguments[(
 
 break;
 default:
-throw (new Error([cljs.core.str("Invalid arity: "),cljs.core.str(args48368.length)].join('')));
+throw (new Error([cljs.core.str("Invalid arity: "),cljs.core.str(args17194.length)].join('')));
 
 }
 });
@@ -245,8 +245,8 @@ return null;
 if(cljs.core.truth_(selector_fn.call(null,loc))){
 return loc;
 } else {
-var G__48375 = next_fn.call(null,loc);
-loc = G__48375;
+var G__17201 = next_fn.call(null,loc);
+loc = G__17201;
 continue;
 }
 }
@@ -266,10 +266,10 @@ while(true){
 if((loc == null)){
 return cljs.core.persistent_BANG_.call(null,selected_nodes);
 } else {
-var G__48376 = hickory.select.select_next_loc.call(null,selector_fn,clojure.zip.next.call(null,loc));
-var G__48377 = cljs.core.conj_BANG_.call(null,selected_nodes,loc);
-loc = G__48376;
-selected_nodes = G__48377;
+var G__17202 = hickory.select.select_next_loc.call(null,selector_fn,clojure.zip.next.call(null,loc));
+var G__17203 = cljs.core.conj_BANG_.call(null,selected_nodes,loc);
+loc = G__17202;
+selected_nodes = G__17203;
 continue;
 }
 break;
@@ -292,11 +292,11 @@ hickory.select.node_type = (function hickory$select$node_type(type){
 return (function (hzip_loc){
 var node = clojure.zip.node.call(null,hzip_loc);
 var node_type__$1 = new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(node);
-if(cljs.core.truth_((function (){var and__23774__auto__ = node_type__$1;
-if(cljs.core.truth_(and__23774__auto__)){
+if(cljs.core.truth_((function (){var and__4656__auto__ = node_type__$1;
+if(cljs.core.truth_(and__4656__auto__)){
 return cljs.core._EQ_.call(null,clojure.string.lower_case.call(null,cljs.core.name.call(null,node_type__$1)),clojure.string.lower_case.call(null,cljs.core.name.call(null,type)));
 } else {
-return and__23774__auto__;
+return and__4656__auto__;
 }
 })())){
 return hzip_loc;
@@ -315,11 +315,11 @@ hickory.select.tag = (function hickory$select$tag(tag__$1){
 return (function (hzip_loc){
 var node = clojure.zip.node.call(null,hzip_loc);
 var node_tag = new cljs.core.Keyword(null,"tag","tag",-1290361223).cljs$core$IFn$_invoke$arity$1(node);
-if(cljs.core.truth_((function (){var and__23774__auto__ = node_tag;
-if(cljs.core.truth_(and__23774__auto__)){
+if(cljs.core.truth_((function (){var and__4656__auto__ = node_tag;
+if(cljs.core.truth_(and__4656__auto__)){
 return cljs.core._EQ_.call(null,clojure.string.lower_case.call(null,cljs.core.name.call(null,node_tag)),clojure.string.lower_case.call(null,cljs.core.name.call(null,tag__$1)));
 } else {
-return and__23774__auto__;
+return and__4656__auto__;
 }
 })())){
 return hzip_loc;
@@ -344,23 +344,23 @@ return null;
  * present, so it can assume its argument is not nil.
  */
 hickory.select.attr = (function hickory$select$attr(var_args){
-var args48378 = [];
-var len__24844__auto___48381 = arguments.length;
-var i__24845__auto___48382 = (0);
+var args17204 = [];
+var len__5726__auto___17207 = arguments.length;
+var i__5727__auto___17208 = (0);
 while(true){
-if((i__24845__auto___48382 < len__24844__auto___48381)){
-args48378.push((arguments[i__24845__auto___48382]));
+if((i__5727__auto___17208 < len__5726__auto___17207)){
+args17204.push((arguments[i__5727__auto___17208]));
 
-var G__48383 = (i__24845__auto___48382 + (1));
-i__24845__auto___48382 = G__48383;
+var G__17209 = (i__5727__auto___17208 + (1));
+i__5727__auto___17208 = G__17209;
 continue;
 } else {
 }
 break;
 }
 
-var G__48380 = args48378.length;
-switch (G__48380) {
+var G__17206 = args17204.length;
+switch (G__17206) {
 case 1:
 return hickory.select.attr.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -370,7 +370,7 @@ return hickory.select.attr.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(argum
 
 break;
 default:
-throw (new Error([cljs.core.str("Invalid arity: "),cljs.core.str(args48378.length)].join('')));
+throw (new Error([cljs.core.str("Invalid arity: "),cljs.core.str(args17204.length)].join('')));
 
 }
 });
@@ -385,11 +385,11 @@ hickory.select.attr.cljs$core$IFn$_invoke$arity$2 = (function (attr_name,predica
 return (function (hzip_loc){
 var node = clojure.zip.node.call(null,hzip_loc);
 var attr_key = cljs.core.keyword.call(null,clojure.string.lower_case.call(null,cljs.core.name.call(null,attr_name)));
-if(cljs.core.truth_((function (){var and__23774__auto__ = cljs.core.contains_QMARK_.call(null,new cljs.core.Keyword(null,"attrs","attrs",-2090668713).cljs$core$IFn$_invoke$arity$1(node),attr_key);
-if(and__23774__auto__){
+if(cljs.core.truth_((function (){var and__4656__auto__ = cljs.core.contains_QMARK_.call(null,new cljs.core.Keyword(null,"attrs","attrs",-2090668713).cljs$core$IFn$_invoke$arity$1(node),attr_key);
+if(and__4656__auto__){
 return predicate.call(null,cljs.core.get_in.call(null,node,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"attrs","attrs",-2090668713),attr_key], null)));
 } else {
-return and__23774__auto__;
+return and__4656__auto__;
 }
 })())){
 return hzip_loc;
@@ -407,8 +407,8 @@ hickory.select.attr.cljs$lang$maxFixedArity = 2;
  * is done case-insensitively.
  */
 hickory.select.id = (function hickory$select$id(id__$1){
-return hickory.select.attr.call(null,new cljs.core.Keyword(null,"id","id",-1388402092),(function (p1__48385_SHARP_){
-return cljs.core._EQ_.call(null,clojure.string.lower_case.call(null,p1__48385_SHARP_),clojure.string.lower_case.call(null,cljs.core.name.call(null,id__$1)));
+return hickory.select.attr.call(null,new cljs.core.Keyword(null,"id","id",-1388402092),(function (p1__17211_SHARP_){
+return cljs.core._EQ_.call(null,clojure.string.lower_case.call(null,p1__17211_SHARP_),clojure.string.lower_case.call(null,cljs.core.name.call(null,id__$1)));
 }));
 });
 /**
@@ -421,8 +421,8 @@ hickory.select.class$ = (function hickory$select$class(class_name){
 var parse_classes = (function hickory$select$class_$_parse_classes(class_str){
 return cljs.core.into.call(null,cljs.core.PersistentHashSet.EMPTY,cljs.core.mapv.call(null,clojure.string.lower_case,clojure.string.split.call(null,class_str,/ /)));
 });
-return hickory.select.attr.call(null,new cljs.core.Keyword(null,"class","class",-2030961996),(function (p1__48386_SHARP_){
-return cljs.core.contains_QMARK_.call(null,parse_classes.call(null,p1__48386_SHARP_),clojure.string.lower_case.call(null,cljs.core.name.call(null,class_name)));
+return hickory.select.attr.call(null,new cljs.core.Keyword(null,"class","class",-2030961996),(function (p1__17212_SHARP_){
+return cljs.core.contains_QMARK_.call(null,parse_classes.call(null,p1__17212_SHARP_),clojure.string.lower_case.call(null,cljs.core.name.call(null,class_name)));
 }));
 });
 /**
@@ -448,16 +448,16 @@ hickory.select.element = hickory.select.any;
  */
 hickory.select.element_child = (function hickory$select$element_child(hzip_loc){
 var possible_parent = clojure.zip.up.call(null,hzip_loc);
-var and__23774__auto__ = hickory.select.element.call(null,hzip_loc);
-if(cljs.core.truth_(and__23774__auto__)){
-var and__23774__auto____$1 = possible_parent;
-if(cljs.core.truth_(and__23774__auto____$1)){
+var and__4656__auto__ = hickory.select.element.call(null,hzip_loc);
+if(cljs.core.truth_(and__4656__auto__)){
+var and__4656__auto____$1 = possible_parent;
+if(cljs.core.truth_(and__4656__auto____$1)){
 return hickory.select.element.call(null,possible_parent);
 } else {
-return and__23774__auto____$1;
+return and__4656__auto____$1;
 }
 } else {
-return and__23774__auto__;
+return and__4656__auto__;
 }
 });
 /**
@@ -480,8 +480,8 @@ return null;
  */
 hickory.select.find_in_text = (function hickory$select$find_in_text(re){
 return (function (hzip_loc){
-return cljs.core.some.call(null,(function (p1__48387_SHARP_){
-return cljs.core.re_find.call(null,re,p1__48387_SHARP_);
+return cljs.core.some.call(null,(function (p1__17213_SHARP_){
+return cljs.core.re_find.call(null,re,p1__17213_SHARP_);
 }),cljs.core.filter.call(null,cljs.core.string_QMARK_,new cljs.core.Keyword(null,"content","content",15833224).cljs$core$IFn$_invoke$arity$1(clojure.zip.node.call(null,hzip_loc))));
 });
 });
@@ -530,23 +530,23 @@ return null;
  * last is n.
  */
 hickory.select.nth_of_type = (function hickory$select$nth_of_type(var_args){
-var args48389 = [];
-var len__24844__auto___48392 = arguments.length;
-var i__24845__auto___48393 = (0);
+var args17215 = [];
+var len__5726__auto___17218 = arguments.length;
+var i__5727__auto___17219 = (0);
 while(true){
-if((i__24845__auto___48393 < len__24844__auto___48392)){
-args48389.push((arguments[i__24845__auto___48393]));
+if((i__5727__auto___17219 < len__5726__auto___17218)){
+args17215.push((arguments[i__5727__auto___17219]));
 
-var G__48394 = (i__24845__auto___48393 + (1));
-i__24845__auto___48393 = G__48394;
+var G__17220 = (i__5727__auto___17219 + (1));
+i__5727__auto___17219 = G__17220;
 continue;
 } else {
 }
 break;
 }
 
-var G__48391 = args48389.length;
-switch (G__48391) {
+var G__17217 = args17215.length;
+switch (G__17217) {
 case 2:
 return hickory.select.nth_of_type.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
 
@@ -556,7 +556,7 @@ return hickory.select.nth_of_type.cljs$core$IFn$_invoke$arity$3((arguments[(0)])
 
 break;
 default:
-throw (new Error([cljs.core.str("Invalid arity: "),cljs.core.str(args48389.length)].join('')));
+throw (new Error([cljs.core.str("Invalid arity: "),cljs.core.str(args17215.length)].join('')));
 
 }
 });
@@ -576,15 +576,15 @@ return hickory.select.nth_of_type.call(null,(0),c,typ);
 
 hickory.select.nth_of_type.cljs$core$IFn$_invoke$arity$3 = (function (n,c,typ){
 return (function (hzip_loc){
-if(cljs.core.truth_((function (){var and__23774__auto__ = hickory.select.element_child.call(null,hzip_loc);
-if(cljs.core.truth_(and__23774__auto__)){
+if(cljs.core.truth_((function (){var and__4656__auto__ = hickory.select.element_child.call(null,hzip_loc);
+if(cljs.core.truth_(and__4656__auto__)){
 return cljs.core._EQ_.call(null,typ,new cljs.core.Keyword(null,"tag","tag",-1290361223).cljs$core$IFn$_invoke$arity$1(clojure.zip.node.call(null,hzip_loc)));
 } else {
-return and__23774__auto__;
+return and__4656__auto__;
 }
 })())){
-var sel = hickory.select.n_moves_until.call(null,n,c,(function (p1__48388_SHARP_){
-return hickory.select.left_pred.call(null,p1__48388_SHARP_,(function (x){
+var sel = hickory.select.n_moves_until.call(null,n,c,(function (p1__17214_SHARP_){
+return hickory.select.left_pred.call(null,p1__17214_SHARP_,(function (x){
 return cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"tag","tag",-1290361223).cljs$core$IFn$_invoke$arity$1(clojure.zip.node.call(null,x)),typ);
 }));
 }),cljs.core.nil_QMARK_);
@@ -602,23 +602,23 @@ hickory.select.nth_of_type.cljs$lang$maxFixedArity = 3;
  * last is n.
  */
 hickory.select.nth_last_of_type = (function hickory$select$nth_last_of_type(var_args){
-var args48397 = [];
-var len__24844__auto___48400 = arguments.length;
-var i__24845__auto___48401 = (0);
+var args17223 = [];
+var len__5726__auto___17226 = arguments.length;
+var i__5727__auto___17227 = (0);
 while(true){
-if((i__24845__auto___48401 < len__24844__auto___48400)){
-args48397.push((arguments[i__24845__auto___48401]));
+if((i__5727__auto___17227 < len__5726__auto___17226)){
+args17223.push((arguments[i__5727__auto___17227]));
 
-var G__48402 = (i__24845__auto___48401 + (1));
-i__24845__auto___48401 = G__48402;
+var G__17228 = (i__5727__auto___17227 + (1));
+i__5727__auto___17227 = G__17228;
 continue;
 } else {
 }
 break;
 }
 
-var G__48399 = args48397.length;
-switch (G__48399) {
+var G__17225 = args17223.length;
+switch (G__17225) {
 case 2:
 return hickory.select.nth_last_of_type.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
 
@@ -628,7 +628,7 @@ return hickory.select.nth_last_of_type.cljs$core$IFn$_invoke$arity$3((arguments[
 
 break;
 default:
-throw (new Error([cljs.core.str("Invalid arity: "),cljs.core.str(args48397.length)].join('')));
+throw (new Error([cljs.core.str("Invalid arity: "),cljs.core.str(args17223.length)].join('')));
 
 }
 });
@@ -648,15 +648,15 @@ return hickory.select.nth_last_of_type.call(null,(0),c,typ);
 
 hickory.select.nth_last_of_type.cljs$core$IFn$_invoke$arity$3 = (function (n,c,typ){
 return (function (hzip_loc){
-if(cljs.core.truth_((function (){var and__23774__auto__ = hickory.select.element_child.call(null,hzip_loc);
-if(cljs.core.truth_(and__23774__auto__)){
+if(cljs.core.truth_((function (){var and__4656__auto__ = hickory.select.element_child.call(null,hzip_loc);
+if(cljs.core.truth_(and__4656__auto__)){
 return cljs.core._EQ_.call(null,typ,new cljs.core.Keyword(null,"tag","tag",-1290361223).cljs$core$IFn$_invoke$arity$1(clojure.zip.node.call(null,hzip_loc)));
 } else {
-return and__23774__auto__;
+return and__4656__auto__;
 }
 })())){
-var sel = hickory.select.n_moves_until.call(null,n,c,(function (p1__48396_SHARP_){
-return hickory.select.right_pred.call(null,p1__48396_SHARP_,(function (x){
+var sel = hickory.select.n_moves_until.call(null,n,c,(function (p1__17222_SHARP_){
+return hickory.select.right_pred.call(null,p1__17222_SHARP_,(function (x){
 return cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"tag","tag",-1290361223).cljs$core$IFn$_invoke$arity$1(clojure.zip.node.call(null,x)),typ);
 }));
 }),cljs.core.nil_QMARK_);
@@ -673,23 +673,23 @@ hickory.select.nth_last_of_type.cljs$lang$maxFixedArity = 3;
  * its parent (and it has a parent). First element is 1, last is n.
  */
 hickory.select.nth_child = (function hickory$select$nth_child(var_args){
-var args48405 = [];
-var len__24844__auto___48408 = arguments.length;
-var i__24845__auto___48409 = (0);
+var args17231 = [];
+var len__5726__auto___17234 = arguments.length;
+var i__5727__auto___17235 = (0);
 while(true){
-if((i__24845__auto___48409 < len__24844__auto___48408)){
-args48405.push((arguments[i__24845__auto___48409]));
+if((i__5727__auto___17235 < len__5726__auto___17234)){
+args17231.push((arguments[i__5727__auto___17235]));
 
-var G__48410 = (i__24845__auto___48409 + (1));
-i__24845__auto___48409 = G__48410;
+var G__17236 = (i__5727__auto___17235 + (1));
+i__5727__auto___17235 = G__17236;
 continue;
 } else {
 }
 break;
 }
 
-var G__48407 = args48405.length;
-switch (G__48407) {
+var G__17233 = args17231.length;
+switch (G__17233) {
 case 1:
 return hickory.select.nth_child.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -699,7 +699,7 @@ return hickory.select.nth_child.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(
 
 break;
 default:
-throw (new Error([cljs.core.str("Invalid arity: "),cljs.core.str(args48405.length)].join('')));
+throw (new Error([cljs.core.str("Invalid arity: "),cljs.core.str(args17231.length)].join('')));
 
 }
 });
@@ -720,8 +720,8 @@ return hickory.select.nth_child.call(null,(0),c);
 hickory.select.nth_child.cljs$core$IFn$_invoke$arity$2 = (function (n,c){
 return (function (hzip_loc){
 if(cljs.core.truth_(hickory.select.element_child.call(null,hzip_loc))){
-var sel = hickory.select.n_moves_until.call(null,n,c,(function (p1__48404_SHARP_){
-return hickory.select.left_of_node_type.call(null,p1__48404_SHARP_,new cljs.core.Keyword(null,"element","element",1974019749));
+var sel = hickory.select.n_moves_until.call(null,n,c,(function (p1__17230_SHARP_){
+return hickory.select.left_of_node_type.call(null,p1__17230_SHARP_,new cljs.core.Keyword(null,"element","element",1974019749));
 }),cljs.core.nil_QMARK_);
 return sel.call(null,hzip_loc);
 } else {
@@ -736,23 +736,23 @@ hickory.select.nth_child.cljs$lang$maxFixedArity = 2;
  * and has a parent.
  */
 hickory.select.nth_last_child = (function hickory$select$nth_last_child(var_args){
-var args48413 = [];
-var len__24844__auto___48416 = arguments.length;
-var i__24845__auto___48417 = (0);
+var args17239 = [];
+var len__5726__auto___17242 = arguments.length;
+var i__5727__auto___17243 = (0);
 while(true){
-if((i__24845__auto___48417 < len__24844__auto___48416)){
-args48413.push((arguments[i__24845__auto___48417]));
+if((i__5727__auto___17243 < len__5726__auto___17242)){
+args17239.push((arguments[i__5727__auto___17243]));
 
-var G__48418 = (i__24845__auto___48417 + (1));
-i__24845__auto___48417 = G__48418;
+var G__17244 = (i__5727__auto___17243 + (1));
+i__5727__auto___17243 = G__17244;
 continue;
 } else {
 }
 break;
 }
 
-var G__48415 = args48413.length;
-switch (G__48415) {
+var G__17241 = args17239.length;
+switch (G__17241) {
 case 1:
 return hickory.select.nth_last_child.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -762,7 +762,7 @@ return hickory.select.nth_last_child.cljs$core$IFn$_invoke$arity$2((arguments[(0
 
 break;
 default:
-throw (new Error([cljs.core.str("Invalid arity: "),cljs.core.str(args48413.length)].join('')));
+throw (new Error([cljs.core.str("Invalid arity: "),cljs.core.str(args17239.length)].join('')));
 
 }
 });
@@ -783,8 +783,8 @@ return hickory.select.nth_last_child.call(null,(0),c);
 hickory.select.nth_last_child.cljs$core$IFn$_invoke$arity$2 = (function (n,c){
 return (function (hzip_loc){
 if(cljs.core.truth_(hickory.select.element_child.call(null,hzip_loc))){
-var sel = hickory.select.n_moves_until.call(null,n,c,(function (p1__48412_SHARP_){
-return hickory.select.right_of_node_type.call(null,p1__48412_SHARP_,new cljs.core.Keyword(null,"element","element",1974019749));
+var sel = hickory.select.n_moves_until.call(null,n,c,(function (p1__17238_SHARP_){
+return hickory.select.right_of_node_type.call(null,p1__17238_SHARP_,new cljs.core.Keyword(null,"element","element",1974019749));
 }),cljs.core.nil_QMARK_);
 return sel.call(null,hzip_loc);
 } else {
@@ -800,11 +800,11 @@ hickory.select.nth_last_child.cljs$lang$maxFixedArity = 2;
  * parent).
  */
 hickory.select.first_child = (function hickory$select$first_child(hzip_loc){
-var and__23774__auto__ = hickory.select.element_child.call(null,hzip_loc);
-if(cljs.core.truth_(and__23774__auto__)){
+var and__4656__auto__ = hickory.select.element_child.call(null,hzip_loc);
+if(cljs.core.truth_(and__4656__auto__)){
 return hickory.select.nth_child.call(null,(1)).call(null,hzip_loc);
 } else {
-return and__23774__auto__;
+return and__4656__auto__;
 }
 });
 /**
@@ -813,11 +813,11 @@ return and__23774__auto__;
  * parent.
  */
 hickory.select.last_child = (function hickory$select$last_child(hzip_loc){
-var and__23774__auto__ = hickory.select.element_child.call(null,hzip_loc);
-if(cljs.core.truth_(and__23774__auto__)){
+var and__4656__auto__ = hickory.select.element_child.call(null,hzip_loc);
+if(cljs.core.truth_(and__4656__auto__)){
 return hickory.select.nth_last_child.call(null,(1)).call(null,hzip_loc);
 } else {
-return and__23774__auto__;
+return and__4656__auto__;
 }
 });
 /**
@@ -825,29 +825,29 @@ return and__23774__auto__;
  * all of the argument selectors are true.
  */
 hickory.select.and = (function hickory$select$and(var_args){
-var args__24851__auto__ = [];
-var len__24844__auto___48422 = arguments.length;
-var i__24845__auto___48423 = (0);
+var args__5733__auto__ = [];
+var len__5726__auto___17248 = arguments.length;
+var i__5727__auto___17249 = (0);
 while(true){
-if((i__24845__auto___48423 < len__24844__auto___48422)){
-args__24851__auto__.push((arguments[i__24845__auto___48423]));
+if((i__5727__auto___17249 < len__5726__auto___17248)){
+args__5733__auto__.push((arguments[i__5727__auto___17249]));
 
-var G__48424 = (i__24845__auto___48423 + (1));
-i__24845__auto___48423 = G__48424;
+var G__17250 = (i__5727__auto___17249 + (1));
+i__5727__auto___17249 = G__17250;
 continue;
 } else {
 }
 break;
 }
 
-var argseq__24852__auto__ = ((((0) < args__24851__auto__.length))?(new cljs.core.IndexedSeq(args__24851__auto__.slice((0)),(0))):null);
-return hickory.select.and.cljs$core$IFn$_invoke$arity$variadic(argseq__24852__auto__);
+var argseq__5734__auto__ = ((((0) < args__5733__auto__.length))?(new cljs.core.IndexedSeq(args__5733__auto__.slice((0)),(0))):null);
+return hickory.select.and.cljs$core$IFn$_invoke$arity$variadic(argseq__5734__auto__);
 });
 
 hickory.select.and.cljs$core$IFn$_invoke$arity$variadic = (function (selectors){
 return (function (zip_loc){
-if(cljs.core.every_QMARK_.call(null,(function (p1__48420_SHARP_){
-return p1__48420_SHARP_.call(null,zip_loc);
+if(cljs.core.every_QMARK_.call(null,(function (p1__17246_SHARP_){
+return p1__17246_SHARP_.call(null,zip_loc);
 }),selectors)){
 return zip_loc;
 } else {
@@ -858,37 +858,37 @@ return null;
 
 hickory.select.and.cljs$lang$maxFixedArity = (0);
 
-hickory.select.and.cljs$lang$applyTo = (function (seq48421){
-return hickory.select.and.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq48421));
+hickory.select.and.cljs$lang$applyTo = (function (seq17247){
+return hickory.select.and.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq17247));
 });
 /**
  * Takes any number of selectors and returns a selector that is true if
  * any of the argument selectors are true.
  */
 hickory.select.or = (function hickory$select$or(var_args){
-var args__24851__auto__ = [];
-var len__24844__auto___48427 = arguments.length;
-var i__24845__auto___48428 = (0);
+var args__5733__auto__ = [];
+var len__5726__auto___17253 = arguments.length;
+var i__5727__auto___17254 = (0);
 while(true){
-if((i__24845__auto___48428 < len__24844__auto___48427)){
-args__24851__auto__.push((arguments[i__24845__auto___48428]));
+if((i__5727__auto___17254 < len__5726__auto___17253)){
+args__5733__auto__.push((arguments[i__5727__auto___17254]));
 
-var G__48429 = (i__24845__auto___48428 + (1));
-i__24845__auto___48428 = G__48429;
+var G__17255 = (i__5727__auto___17254 + (1));
+i__5727__auto___17254 = G__17255;
 continue;
 } else {
 }
 break;
 }
 
-var argseq__24852__auto__ = ((((0) < args__24851__auto__.length))?(new cljs.core.IndexedSeq(args__24851__auto__.slice((0)),(0))):null);
-return hickory.select.or.cljs$core$IFn$_invoke$arity$variadic(argseq__24852__auto__);
+var argseq__5734__auto__ = ((((0) < args__5733__auto__.length))?(new cljs.core.IndexedSeq(args__5733__auto__.slice((0)),(0))):null);
+return hickory.select.or.cljs$core$IFn$_invoke$arity$variadic(argseq__5734__auto__);
 });
 
 hickory.select.or.cljs$core$IFn$_invoke$arity$variadic = (function (selectors){
 return (function (zip_loc){
-if(cljs.core.truth_(cljs.core.some.call(null,(function (p1__48425_SHARP_){
-return p1__48425_SHARP_.call(null,zip_loc);
+if(cljs.core.truth_(cljs.core.some.call(null,(function (p1__17251_SHARP_){
+return p1__17251_SHARP_.call(null,zip_loc);
 }),selectors))){
 return zip_loc;
 } else {
@@ -899,8 +899,8 @@ return null;
 
 hickory.select.or.cljs$lang$maxFixedArity = (0);
 
-hickory.select.or.cljs$lang$applyTo = (function (seq48426){
-return hickory.select.or.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq48426));
+hickory.select.or.cljs$lang$applyTo = (function (seq17252){
+return hickory.select.or.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq17252));
 });
 /**
  * Takes a selector argument and returns a selector that is true if
@@ -937,23 +937,23 @@ return hickory.select.and.call(null,hickory.select.node_type.call(null,new cljs.
  * to succeeds.
  */
 hickory.select.ordered_adjacent = (function hickory$select$ordered_adjacent(var_args){
-var args__24851__auto__ = [];
-var len__24844__auto___48432 = arguments.length;
-var i__24845__auto___48433 = (0);
+var args__5733__auto__ = [];
+var len__5726__auto___17258 = arguments.length;
+var i__5727__auto___17259 = (0);
 while(true){
-if((i__24845__auto___48433 < len__24844__auto___48432)){
-args__24851__auto__.push((arguments[i__24845__auto___48433]));
+if((i__5727__auto___17259 < len__5726__auto___17258)){
+args__5733__auto__.push((arguments[i__5727__auto___17259]));
 
-var G__48434 = (i__24845__auto___48433 + (1));
-i__24845__auto___48433 = G__48434;
+var G__17260 = (i__5727__auto___17259 + (1));
+i__5727__auto___17259 = G__17260;
 continue;
 } else {
 }
 break;
 }
 
-var argseq__24852__auto__ = ((((1) < args__24851__auto__.length))?(new cljs.core.IndexedSeq(args__24851__auto__.slice((1)),(0))):null);
-return hickory.select.ordered_adjacent.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),argseq__24852__auto__);
+var argseq__5734__auto__ = ((((1) < args__5733__auto__.length))?(new cljs.core.IndexedSeq(args__5733__auto__.slice((1)),(0))):null);
+return hickory.select.ordered_adjacent.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),argseq__5734__auto__);
 });
 
 hickory.select.ordered_adjacent.cljs$core$IFn$_invoke$arity$variadic = (function (move_fn,selectors){
@@ -972,10 +972,10 @@ return null;
 var temp__4423__auto__ = cljs.core.nth.call(null,selectors__$1,idx).call(null,curr_loc);
 if(cljs.core.truth_(temp__4423__auto__)){
 var next_loc = temp__4423__auto__;
-var G__48435 = move_fn.call(null,next_loc);
-var G__48436 = (idx + (1));
-curr_loc = G__48435;
-idx = G__48436;
+var G__17261 = move_fn.call(null,next_loc);
+var G__17262 = (idx + (1));
+curr_loc = G__17261;
+idx = G__17262;
 continue;
 } else {
 return null;
@@ -991,10 +991,10 @@ break;
 
 hickory.select.ordered_adjacent.cljs$lang$maxFixedArity = (1);
 
-hickory.select.ordered_adjacent.cljs$lang$applyTo = (function (seq48430){
-var G__48431 = cljs.core.first.call(null,seq48430);
-var seq48430__$1 = cljs.core.next.call(null,seq48430);
-return hickory.select.ordered_adjacent.cljs$core$IFn$_invoke$arity$variadic(G__48431,seq48430__$1);
+hickory.select.ordered_adjacent.cljs$lang$applyTo = (function (seq17256){
+var G__17257 = cljs.core.first.call(null,seq17256);
+var seq17256__$1 = cljs.core.next.call(null,seq17256);
+return hickory.select.ordered_adjacent.cljs$core$IFn$_invoke$arity$variadic(G__17257,seq17256__$1);
 });
 /**
  * Takes any number of selectors as arguments and returns a selector that
@@ -1009,23 +1009,23 @@ return hickory.select.ordered_adjacent.cljs$core$IFn$_invoke$arity$variadic(G__4
  * <div><span class="foo"><b><input disabled></input></b></span></div>
  */
 hickory.select.child = (function hickory$select$child(var_args){
-var args__24851__auto__ = [];
-var len__24844__auto___48438 = arguments.length;
-var i__24845__auto___48439 = (0);
+var args__5733__auto__ = [];
+var len__5726__auto___17264 = arguments.length;
+var i__5727__auto___17265 = (0);
 while(true){
-if((i__24845__auto___48439 < len__24844__auto___48438)){
-args__24851__auto__.push((arguments[i__24845__auto___48439]));
+if((i__5727__auto___17265 < len__5726__auto___17264)){
+args__5733__auto__.push((arguments[i__5727__auto___17265]));
 
-var G__48440 = (i__24845__auto___48439 + (1));
-i__24845__auto___48439 = G__48440;
+var G__17266 = (i__5727__auto___17265 + (1));
+i__5727__auto___17265 = G__17266;
 continue;
 } else {
 }
 break;
 }
 
-var argseq__24852__auto__ = ((((0) < args__24851__auto__.length))?(new cljs.core.IndexedSeq(args__24851__auto__.slice((0)),(0))):null);
-return hickory.select.child.cljs$core$IFn$_invoke$arity$variadic(argseq__24852__auto__);
+var argseq__5734__auto__ = ((((0) < args__5733__auto__.length))?(new cljs.core.IndexedSeq(args__5733__auto__.slice((0)),(0))):null);
+return hickory.select.child.cljs$core$IFn$_invoke$arity$variadic(argseq__5734__auto__);
 });
 
 hickory.select.child.cljs$core$IFn$_invoke$arity$variadic = (function (selectors){
@@ -1034,8 +1034,8 @@ return cljs.core.apply.call(null,hickory.select.ordered_adjacent,clojure.zip.up,
 
 hickory.select.child.cljs$lang$maxFixedArity = (0);
 
-hickory.select.child.cljs$lang$applyTo = (function (seq48437){
-return hickory.select.child.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq48437));
+hickory.select.child.cljs$lang$applyTo = (function (seq17263){
+return hickory.select.child.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq17263));
 });
 /**
  * Takes any number of selectors as arguments and returns a selector that
@@ -1050,35 +1050,35 @@ return hickory.select.child.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.c
  * <div>...</div><b>...</b><span class="foo">...</span>
  */
 hickory.select.follow_adjacent = (function hickory$select$follow_adjacent(var_args){
-var args__24851__auto__ = [];
-var len__24844__auto___48443 = arguments.length;
-var i__24845__auto___48444 = (0);
+var args__5733__auto__ = [];
+var len__5726__auto___17269 = arguments.length;
+var i__5727__auto___17270 = (0);
 while(true){
-if((i__24845__auto___48444 < len__24844__auto___48443)){
-args__24851__auto__.push((arguments[i__24845__auto___48444]));
+if((i__5727__auto___17270 < len__5726__auto___17269)){
+args__5733__auto__.push((arguments[i__5727__auto___17270]));
 
-var G__48445 = (i__24845__auto___48444 + (1));
-i__24845__auto___48444 = G__48445;
+var G__17271 = (i__5727__auto___17270 + (1));
+i__5727__auto___17270 = G__17271;
 continue;
 } else {
 }
 break;
 }
 
-var argseq__24852__auto__ = ((((0) < args__24851__auto__.length))?(new cljs.core.IndexedSeq(args__24851__auto__.slice((0)),(0))):null);
-return hickory.select.follow_adjacent.cljs$core$IFn$_invoke$arity$variadic(argseq__24852__auto__);
+var argseq__5734__auto__ = ((((0) < args__5733__auto__.length))?(new cljs.core.IndexedSeq(args__5733__auto__.slice((0)),(0))):null);
+return hickory.select.follow_adjacent.cljs$core$IFn$_invoke$arity$variadic(argseq__5734__auto__);
 });
 
 hickory.select.follow_adjacent.cljs$core$IFn$_invoke$arity$variadic = (function (selectors){
-return cljs.core.apply.call(null,hickory.select.ordered_adjacent,(function (p1__48441_SHARP_){
-return hickory.select.left_of_node_type.call(null,p1__48441_SHARP_,new cljs.core.Keyword(null,"element","element",1974019749));
+return cljs.core.apply.call(null,hickory.select.ordered_adjacent,(function (p1__17267_SHARP_){
+return hickory.select.left_of_node_type.call(null,p1__17267_SHARP_,new cljs.core.Keyword(null,"element","element",1974019749));
 }),cljs.core.reverse.call(null,selectors));
 });
 
 hickory.select.follow_adjacent.cljs$lang$maxFixedArity = (0);
 
-hickory.select.follow_adjacent.cljs$lang$applyTo = (function (seq48442){
-return hickory.select.follow_adjacent.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq48442));
+hickory.select.follow_adjacent.cljs$lang$applyTo = (function (seq17268){
+return hickory.select.follow_adjacent.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq17268));
 });
 /**
  * Takes any number of selectors as arguments and returns a selector that
@@ -1093,35 +1093,35 @@ return hickory.select.follow_adjacent.cljs$core$IFn$_invoke$arity$variadic(cljs.
  * <div>...</div><b>...</b><span class="foo">...</span>
  */
 hickory.select.precede_adjacent = (function hickory$select$precede_adjacent(var_args){
-var args__24851__auto__ = [];
-var len__24844__auto___48448 = arguments.length;
-var i__24845__auto___48449 = (0);
+var args__5733__auto__ = [];
+var len__5726__auto___17274 = arguments.length;
+var i__5727__auto___17275 = (0);
 while(true){
-if((i__24845__auto___48449 < len__24844__auto___48448)){
-args__24851__auto__.push((arguments[i__24845__auto___48449]));
+if((i__5727__auto___17275 < len__5726__auto___17274)){
+args__5733__auto__.push((arguments[i__5727__auto___17275]));
 
-var G__48450 = (i__24845__auto___48449 + (1));
-i__24845__auto___48449 = G__48450;
+var G__17276 = (i__5727__auto___17275 + (1));
+i__5727__auto___17275 = G__17276;
 continue;
 } else {
 }
 break;
 }
 
-var argseq__24852__auto__ = ((((0) < args__24851__auto__.length))?(new cljs.core.IndexedSeq(args__24851__auto__.slice((0)),(0))):null);
-return hickory.select.precede_adjacent.cljs$core$IFn$_invoke$arity$variadic(argseq__24852__auto__);
+var argseq__5734__auto__ = ((((0) < args__5733__auto__.length))?(new cljs.core.IndexedSeq(args__5733__auto__.slice((0)),(0))):null);
+return hickory.select.precede_adjacent.cljs$core$IFn$_invoke$arity$variadic(argseq__5734__auto__);
 });
 
 hickory.select.precede_adjacent.cljs$core$IFn$_invoke$arity$variadic = (function (selectors){
-return cljs.core.apply.call(null,hickory.select.ordered_adjacent,(function (p1__48446_SHARP_){
-return hickory.select.right_of_node_type.call(null,p1__48446_SHARP_,new cljs.core.Keyword(null,"element","element",1974019749));
+return cljs.core.apply.call(null,hickory.select.ordered_adjacent,(function (p1__17272_SHARP_){
+return hickory.select.right_of_node_type.call(null,p1__17272_SHARP_,new cljs.core.Keyword(null,"element","element",1974019749));
 }),selectors);
 });
 
 hickory.select.precede_adjacent.cljs$lang$maxFixedArity = (0);
 
-hickory.select.precede_adjacent.cljs$lang$applyTo = (function (seq48447){
-return hickory.select.precede_adjacent.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq48447));
+hickory.select.precede_adjacent.cljs$lang$applyTo = (function (seq17273){
+return hickory.select.precede_adjacent.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq17273));
 });
 /**
  * Takes a zipper movement function and any number of selectors as arguments
@@ -1135,23 +1135,23 @@ return hickory.select.precede_adjacent.cljs$core$IFn$_invoke$arity$variadic(cljs
  * to succeeds.
  */
 hickory.select.ordered = (function hickory$select$ordered(var_args){
-var args__24851__auto__ = [];
-var len__24844__auto___48453 = arguments.length;
-var i__24845__auto___48454 = (0);
+var args__5733__auto__ = [];
+var len__5726__auto___17279 = arguments.length;
+var i__5727__auto___17280 = (0);
 while(true){
-if((i__24845__auto___48454 < len__24844__auto___48453)){
-args__24851__auto__.push((arguments[i__24845__auto___48454]));
+if((i__5727__auto___17280 < len__5726__auto___17279)){
+args__5733__auto__.push((arguments[i__5727__auto___17280]));
 
-var G__48455 = (i__24845__auto___48454 + (1));
-i__24845__auto___48454 = G__48455;
+var G__17281 = (i__5727__auto___17280 + (1));
+i__5727__auto___17280 = G__17281;
 continue;
 } else {
 }
 break;
 }
 
-var argseq__24852__auto__ = ((((1) < args__24851__auto__.length))?(new cljs.core.IndexedSeq(args__24851__auto__.slice((1)),(0))):null);
-return hickory.select.ordered.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),argseq__24852__auto__);
+var argseq__5734__auto__ = ((((1) < args__5733__auto__.length))?(new cljs.core.IndexedSeq(args__5733__auto__.slice((1)),(0))):null);
+return hickory.select.ordered.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),argseq__5734__auto__);
 });
 
 hickory.select.ordered.cljs$core$IFn$_invoke$arity$variadic = (function (move_fn,selectors){
@@ -1170,16 +1170,16 @@ if((curr_loc == null)){
 return null;
 } else {
 if(cljs.core.truth_(cljs.core.nth.call(null,selectors__$1,idx).call(null,curr_loc))){
-var G__48456 = move_fn.call(null,curr_loc);
-var G__48457 = (idx + (1));
-curr_loc = G__48456;
-idx = G__48457;
+var G__17282 = move_fn.call(null,curr_loc);
+var G__17283 = (idx + (1));
+curr_loc = G__17282;
+idx = G__17283;
 continue;
 } else {
-var G__48458 = move_fn.call(null,curr_loc);
-var G__48459 = idx;
-curr_loc = G__48458;
-idx = G__48459;
+var G__17284 = move_fn.call(null,curr_loc);
+var G__17285 = idx;
+curr_loc = G__17284;
+idx = G__17285;
 continue;
 }
 
@@ -1196,10 +1196,10 @@ return null;
 
 hickory.select.ordered.cljs$lang$maxFixedArity = (1);
 
-hickory.select.ordered.cljs$lang$applyTo = (function (seq48451){
-var G__48452 = cljs.core.first.call(null,seq48451);
-var seq48451__$1 = cljs.core.next.call(null,seq48451);
-return hickory.select.ordered.cljs$core$IFn$_invoke$arity$variadic(G__48452,seq48451__$1);
+hickory.select.ordered.cljs$lang$applyTo = (function (seq17277){
+var G__17278 = cljs.core.first.call(null,seq17277);
+var seq17277__$1 = cljs.core.next.call(null,seq17277);
+return hickory.select.ordered.cljs$core$IFn$_invoke$arity$variadic(G__17278,seq17277__$1);
 });
 /**
  * Takes any number of selectors as arguments and returns a selector that
@@ -1217,23 +1217,23 @@ return hickory.select.ordered.cljs$core$IFn$_invoke$arity$variadic(G__48452,seq4
  * <div><span class="foo"><b><input disabled></input></b></span></div>
  */
 hickory.select.descendant = (function hickory$select$descendant(var_args){
-var args__24851__auto__ = [];
-var len__24844__auto___48461 = arguments.length;
-var i__24845__auto___48462 = (0);
+var args__5733__auto__ = [];
+var len__5726__auto___17287 = arguments.length;
+var i__5727__auto___17288 = (0);
 while(true){
-if((i__24845__auto___48462 < len__24844__auto___48461)){
-args__24851__auto__.push((arguments[i__24845__auto___48462]));
+if((i__5727__auto___17288 < len__5726__auto___17287)){
+args__5733__auto__.push((arguments[i__5727__auto___17288]));
 
-var G__48463 = (i__24845__auto___48462 + (1));
-i__24845__auto___48462 = G__48463;
+var G__17289 = (i__5727__auto___17288 + (1));
+i__5727__auto___17288 = G__17289;
 continue;
 } else {
 }
 break;
 }
 
-var argseq__24852__auto__ = ((((0) < args__24851__auto__.length))?(new cljs.core.IndexedSeq(args__24851__auto__.slice((0)),(0))):null);
-return hickory.select.descendant.cljs$core$IFn$_invoke$arity$variadic(argseq__24852__auto__);
+var argseq__5734__auto__ = ((((0) < args__5733__auto__.length))?(new cljs.core.IndexedSeq(args__5733__auto__.slice((0)),(0))):null);
+return hickory.select.descendant.cljs$core$IFn$_invoke$arity$variadic(argseq__5734__auto__);
 });
 
 hickory.select.descendant.cljs$core$IFn$_invoke$arity$variadic = (function (selectors){
@@ -1242,8 +1242,8 @@ return cljs.core.apply.call(null,hickory.select.ordered,clojure.zip.up,cljs.core
 
 hickory.select.descendant.cljs$lang$maxFixedArity = (0);
 
-hickory.select.descendant.cljs$lang$applyTo = (function (seq48460){
-return hickory.select.descendant.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq48460));
+hickory.select.descendant.cljs$lang$applyTo = (function (seq17286){
+return hickory.select.descendant.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq17286));
 });
 /**
  * Takes any number of selectors as arguments and returns a selector that
@@ -1259,35 +1259,35 @@ return hickory.select.descendant.cljs$core$IFn$_invoke$arity$variadic(cljs.core.
  * <div>...</div><b>...</b><span class="foo">...</span>
  */
 hickory.select.follow = (function hickory$select$follow(var_args){
-var args__24851__auto__ = [];
-var len__24844__auto___48466 = arguments.length;
-var i__24845__auto___48467 = (0);
+var args__5733__auto__ = [];
+var len__5726__auto___17292 = arguments.length;
+var i__5727__auto___17293 = (0);
 while(true){
-if((i__24845__auto___48467 < len__24844__auto___48466)){
-args__24851__auto__.push((arguments[i__24845__auto___48467]));
+if((i__5727__auto___17293 < len__5726__auto___17292)){
+args__5733__auto__.push((arguments[i__5727__auto___17293]));
 
-var G__48468 = (i__24845__auto___48467 + (1));
-i__24845__auto___48467 = G__48468;
+var G__17294 = (i__5727__auto___17293 + (1));
+i__5727__auto___17293 = G__17294;
 continue;
 } else {
 }
 break;
 }
 
-var argseq__24852__auto__ = ((((0) < args__24851__auto__.length))?(new cljs.core.IndexedSeq(args__24851__auto__.slice((0)),(0))):null);
-return hickory.select.follow.cljs$core$IFn$_invoke$arity$variadic(argseq__24852__auto__);
+var argseq__5734__auto__ = ((((0) < args__5733__auto__.length))?(new cljs.core.IndexedSeq(args__5733__auto__.slice((0)),(0))):null);
+return hickory.select.follow.cljs$core$IFn$_invoke$arity$variadic(argseq__5734__auto__);
 });
 
 hickory.select.follow.cljs$core$IFn$_invoke$arity$variadic = (function (selectors){
-return cljs.core.apply.call(null,hickory.select.ordered,(function (p1__48464_SHARP_){
-return hickory.select.left_of_node_type.call(null,p1__48464_SHARP_,new cljs.core.Keyword(null,"element","element",1974019749));
+return cljs.core.apply.call(null,hickory.select.ordered,(function (p1__17290_SHARP_){
+return hickory.select.left_of_node_type.call(null,p1__17290_SHARP_,new cljs.core.Keyword(null,"element","element",1974019749));
 }),cljs.core.reverse.call(null,selectors));
 });
 
 hickory.select.follow.cljs$lang$maxFixedArity = (0);
 
-hickory.select.follow.cljs$lang$applyTo = (function (seq48465){
-return hickory.select.follow.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq48465));
+hickory.select.follow.cljs$lang$applyTo = (function (seq17291){
+return hickory.select.follow.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq17291));
 });
 /**
  * Takes any number of selectors as arguments and returns a selector that
@@ -1303,35 +1303,35 @@ return hickory.select.follow.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.
  * <div>...</div><b>...</b><span class="foo">...</span>
  */
 hickory.select.precede = (function hickory$select$precede(var_args){
-var args__24851__auto__ = [];
-var len__24844__auto___48471 = arguments.length;
-var i__24845__auto___48472 = (0);
+var args__5733__auto__ = [];
+var len__5726__auto___17297 = arguments.length;
+var i__5727__auto___17298 = (0);
 while(true){
-if((i__24845__auto___48472 < len__24844__auto___48471)){
-args__24851__auto__.push((arguments[i__24845__auto___48472]));
+if((i__5727__auto___17298 < len__5726__auto___17297)){
+args__5733__auto__.push((arguments[i__5727__auto___17298]));
 
-var G__48473 = (i__24845__auto___48472 + (1));
-i__24845__auto___48472 = G__48473;
+var G__17299 = (i__5727__auto___17298 + (1));
+i__5727__auto___17298 = G__17299;
 continue;
 } else {
 }
 break;
 }
 
-var argseq__24852__auto__ = ((((0) < args__24851__auto__.length))?(new cljs.core.IndexedSeq(args__24851__auto__.slice((0)),(0))):null);
-return hickory.select.precede.cljs$core$IFn$_invoke$arity$variadic(argseq__24852__auto__);
+var argseq__5734__auto__ = ((((0) < args__5733__auto__.length))?(new cljs.core.IndexedSeq(args__5733__auto__.slice((0)),(0))):null);
+return hickory.select.precede.cljs$core$IFn$_invoke$arity$variadic(argseq__5734__auto__);
 });
 
 hickory.select.precede.cljs$core$IFn$_invoke$arity$variadic = (function (selectors){
-return cljs.core.apply.call(null,hickory.select.ordered,(function (p1__48469_SHARP_){
-return hickory.select.right_of_node_type.call(null,p1__48469_SHARP_,new cljs.core.Keyword(null,"element","element",1974019749));
+return cljs.core.apply.call(null,hickory.select.ordered,(function (p1__17295_SHARP_){
+return hickory.select.right_of_node_type.call(null,p1__17295_SHARP_,new cljs.core.Keyword(null,"element","element",1974019749));
 }),selectors);
 });
 
 hickory.select.precede.cljs$lang$maxFixedArity = (0);
 
-hickory.select.precede.cljs$lang$applyTo = (function (seq48470){
-return hickory.select.precede.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq48470));
+hickory.select.precede.cljs$lang$applyTo = (function (seq17296){
+return hickory.select.precede.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq17296));
 });
 /**
  * Takes a selector as argument and returns a selector that returns true
@@ -1354,8 +1354,8 @@ var has_children_QMARK_ = cljs.core.not_EQ_.call(null,null,subtree_start_loc);
 if(has_children_QMARK_){
 var subtree_end_loc = hickory.select.after_subtree.call(null,hzip_loc);
 if(cljs.core.truth_(hickory.select.select_next_loc.call(null,selector,subtree_start_loc,clojure.zip.next,((function (subtree_end_loc,subtree_start_loc,has_children_QMARK_){
-return (function (p1__48474_SHARP_){
-return cljs.core._EQ_.call(null,p1__48474_SHARP_,subtree_end_loc);
+return (function (p1__17300_SHARP_){
+return cljs.core._EQ_.call(null,p1__17300_SHARP_,subtree_end_loc);
 });})(subtree_end_loc,subtree_start_loc,has_children_QMARK_))
 ))){
 return hzip_loc;
@@ -1382,8 +1382,8 @@ var subtree_start_loc = clojure.zip.down.call(null,hzip_loc);
 var has_children_QMARK_ = cljs.core.not_EQ_.call(null,null,subtree_start_loc);
 if(has_children_QMARK_){
 if(cljs.core.truth_(hickory.select.select_next_loc.call(null,selector,subtree_start_loc,clojure.zip.right,((function (subtree_start_loc,has_children_QMARK_){
-return (function (p1__48475_SHARP_){
-return (p1__48475_SHARP_ == null);
+return (function (p1__17301_SHARP_){
+return (p1__17301_SHARP_ == null);
 });})(subtree_start_loc,has_children_QMARK_))
 ))){
 return hzip_loc;
@@ -1396,4 +1396,4 @@ return null;
 });
 });
 
-//# sourceMappingURL=select.js.map?rel=1453744777773
+//# sourceMappingURL=select.js.map?rel=1453863899631

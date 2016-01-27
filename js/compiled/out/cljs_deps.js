@@ -23,13 +23,6 @@ goog.addDependency("../cljs/test.js", ['cljs.test'], ['cljs.core', 'cljs.pprint'
 goog.addDependency("../showdown.inc.js", ['cljsjs.showdown'], []);
 goog.addDependency("../devcards/util/markdown.js", ['devcards.util.markdown'], ['cljs.core', 'cljsjs.showdown', 'clojure.string']);
 goog.addDependency("../devcards/core.js", ['devcards.core'], ['devcards.util.utils', 'devcards.system', 'cljs.core', 'cljs.test', 'cljs.core.async', 'sablono.core', 'devcards.util.edn_renderer', 'devcards.util.markdown', 'clojure.string']);
-goog.addDependency("../figwheel/client/utils.js", ['figwheel.client.utils'], ['cljs.core', 'clojure.string']);
-goog.addDependency("../figwheel/client/file_reloading.js", ['figwheel.client.file_reloading'], ['goog.string', 'goog.net.jsloader', 'goog.Uri', 'cljs.core', 'goog.object', 'cljs.core.async', 'clojure.set', 'figwheel.client.utils', 'clojure.string']);
-goog.addDependency("../cljs/repl.js", ['cljs.repl'], ['cljs.core']);
-goog.addDependency("../cljs/reader.js", ['cljs.reader'], ['goog.string', 'cljs.core', 'goog.string.StringBuffer']);
-goog.addDependency("../figwheel/client/socket.js", ['figwheel.client.socket'], ['cljs.core', 'figwheel.client.utils', 'cljs.reader']);
-goog.addDependency("../figwheel/client/heads_up.js", ['figwheel.client.heads_up'], ['goog.string', 'cljs.core', 'cljs.core.async', 'figwheel.client.socket', 'clojure.string']);
-goog.addDependency("../figwheel/client.js", ['figwheel.client'], ['goog.userAgent.product', 'goog.Uri', 'cljs.core', 'cljs.core.async', 'figwheel.client.file_reloading', 'figwheel.client.utils', 'cljs.repl', 'figwheel.client.heads_up', 'figwheel.client.socket', 'clojure.string']);
 goog.addDependency("../cljs_demo/js_and_html.js", ['cljs_demo.js_and_html'], ['devcards.core', 'cljs.core', 'sablono.core']);
 goog.addDependency("../cljs_demo/intro.js", ['cljs_demo.intro'], ['devcards.core', 'cljs.core']);
 goog.addDependency("../reagent/interop.js", ['reagent.interop'], ['cljs.core']);
@@ -69,4 +62,3 @@ goog.addDependency("../cljs_demo/async.js", ['cljs_demo.async'], ['ajax.core', '
 goog.addDependency("../cljs_demo/first_steps.js", ['cljs_demo.first_steps'], ['devcards.core', 'cljs.core', 'sablono.core']);
 goog.addDependency("../cljs_demo/clj_tour.js", ['cljs_demo.clj_tour'], ['devcards.core', 'cljs.core']);
 goog.addDependency("../cljs_demo/core.js", ['cljs_demo.core'], ['cljs_demo.js_and_html', 'cljs_demo.intro', 'devcards.core', 'cljs.core', 'sablono.core', 'cljs_demo.react', 'cljs_demo.closing', 'cljs_demo.slideshow', 'cljs_demo.async', 'cljs_demo.first_steps', 'cljs_demo.clj_tour']);
-goog.addDependency("../figwheel/connect.js", ['figwheel.connect'], ['devcards.core', 'cljs.core', 'figwheel.client', 'figwheel.client.utils', 'cljs_demo.core']);
